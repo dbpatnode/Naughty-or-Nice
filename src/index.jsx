@@ -1,4 +1,9 @@
 const m = require("mithril");
 const root = document.getElementById("app");
 
-m.render(root, "Yooo we're now on mithril!");
+// styling
+import "./index.css";
+
+import App from "./components/layouts/App.jsx";
+
+m.render(root, <App>This is being rendered from within App</App>);
