@@ -5,4 +5,4 @@ const root = document.getElementById("app");
 
 import App from "./components/layout/App.jsx";
 
-m.render(root, <App>Hello from within App!</App>);
+m.render(root, <App></App>);
