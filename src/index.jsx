@@ -6,4 +6,15 @@ import "./index.css";
 
 import App from "./components/layouts/App.jsx";
 
-m.render(root, <App>This is being rendered from within App</App>);
+m.render(
+  root,
+  <App>
+    <div>
+      <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+      </ul>
+    </div>
+  </App>
+);
