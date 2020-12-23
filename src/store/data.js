@@ -1,9 +1,26 @@
-const TODO = [
+const SANTASLIST = [
   {
-    name: "Vaccum",
-    completed: true,
-    CFP: true,
-    CFPDate: "04/20/2018",
-    CFPCompleted: false,
+    name: "Daniel",
+    location: "Seattle, WA",
+    Naughty: true,
+  },
+  {
+    name: "Yasmine",
+    location: "Seattle, FL",
+    Naughty: false,
+  },
+  {
+    name: "Rowan",
+    location: "Arvada, CA",
+    Naughty: false,
+  },
+  {
+    name: "Calla",
+    location: "Arvada, CA",
+    Naughty: false,
   },
 ];
+
+const getMockData = () => SANTASLIST;
+
+export default getMockData;
