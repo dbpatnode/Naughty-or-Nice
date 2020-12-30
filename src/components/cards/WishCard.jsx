@@ -1,11 +1,12 @@
 const m = require("mithril");
+import WishField from "./WishField.jsx";
 
 const WishCard = {
   view: ({ attrs }) => (
     <div class="wish-card">
-      <span>{attrs.list.name} </span>
-      <span>{attrs.list.location}</span>
-      <span>{attrs.list.naughty}</span>
+      <WishField fieldValue={`${attrs.list.name} ${attrs.list.location}`} />
+      <WishField fieldValue={<i class="fas fa-star" />} />
+      <div class="wish-fields"></div>
     </div>
   ),
 };
