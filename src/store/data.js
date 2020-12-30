@@ -6,17 +6,17 @@ const SANTASLIST = [
   },
   {
     name: "Yasmine",
-    location: "Seattle, FL",
+    location: "Seattle, WA",
     Naughty: false,
   },
   {
     name: "Rowan",
-    location: "Arvada, CA",
+    location: "Arvada, CO",
     Naughty: false,
   },
   {
     name: "Calla",
-    location: "Arvada, CA",
+    location: "Arvada, CO",
     Naughty: false,
   },
 ];
