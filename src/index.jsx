@@ -49,12 +49,12 @@ const FormView = () => (
   </App>
 );
 
-m.route(root, "/santas-list", {
-  "/santas-list": {
-    view: () => WishlistView(SANTASLIST),
-  },
+m.route(root, "/home", {
   "/home": {
     view: () => HomeView(SANTASLIST),
+  },
+  "/santas-list": {
+    view: () => WishlistView(SANTASLIST),
   },
   "/add-child": {
     view: () => FormView(),
