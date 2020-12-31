@@ -1,13 +1,13 @@
 const m = require("mithril");
 const root = document.getElementById("app");
 
-// styles
-import "./index.css";
-
 // Components
 import PageBanner from "./components/ui/PageBanner.jsx";
 import WishCardContainer from "./components/layout/WishCardContainer.jsx";
 import WishCard from "./components/cards/WishCard.jsx";
+
+// styles
+import "./index.css";
 
 // Mock data
 import getMockData from "./store/data";
@@ -19,7 +19,7 @@ const WishlistView = (santaslist) => (
   <App>
     <PageBanner
       action={() => console.log(`logging out`)}
-      title="Santas Wishlist"
+      title="Naughty or Nice"
     />
     <WishCardContainer>
       {santaslist.map((list) => (
@@ -29,4 +29,34 @@ const WishlistView = (santaslist) => (
   </App>
 );
 
-m.render(root, WishlistView(SANTASLIST));
+const HomeView = (santaslist) => (
+  <App>
+    <PageBanner
+      action={() => console.log(`Logging out!`)}
+      title="Call for Papers"
+    />
+    <WishCardContainer />
+  </App>
+);
+
+const FormView = () => (
+  <App>
+    <StageBanner
+      action={() => console.log(`Logging out!`)}
+      title="Add Conference"
+    />
+    <CardContainer />
+  </App>
+);
+
+m.route(root, "/santas-list", {
+  "/santas-list": {
+    view: () => WishlistView(SANTASLIST),
+  },
+  "/home": {
+    view: () => HomeView(SANTASLIST),
+  },
+  "/add-child": {
+    view: () => FormView(),
+  },
+});

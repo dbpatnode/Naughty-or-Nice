@@ -2,7 +2,7 @@ const m = require("mithril");
 
 const LogoutButton = {
   view: ({ attrs }) => (
-    <div onClick={attrs.action}>
+    <div onclick={attrs.action}>
       <i class="fas fa-sign-out-alt" />
     </div>
   ),

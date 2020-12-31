@@ -1,9 +1,9 @@
 const m = require("mithril");
 const NavButton = {
   view: ({ attrs }) => (
-    <div class="nav-button" href={`#!/{attrs.path}`}>
+    <a class="nav-button" href={`#!/${attrs.path}`}>
       {attrs.icon}
-    </div>
+    </a>
   ),
 };
 
