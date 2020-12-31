@@ -33,7 +33,7 @@ const HomeView = (santaslist) => (
   <App>
     <PageBanner
       action={() => console.log(`Logging out!`)}
-      title="Call for Papers"
+      title="Santas naughty or nice list!"
     />
     <WishCardContainer />
   </App>
@@ -43,7 +43,7 @@ const FormView = () => (
   <App>
     <StageBanner
       action={() => console.log(`Logging out!`)}
-      title="Add Conference"
+      title="Add a kid to the naughty or nice list:"
     />
     <CardContainer />
   </App>
