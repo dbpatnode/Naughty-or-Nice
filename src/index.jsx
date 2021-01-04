@@ -6,10 +6,10 @@ import PageBanner from "./components/ui/PageBanner.jsx";
 import WishCardContainer from "./components/layout/WishCardContainer.jsx";
 import WishCard from "./components/cards/WishCard.jsx";
 
-// styles
+// styling
 import "./index.css";
 
-// Mock data
+// fake data
 import getMockData from "./store/data";
 const SANTASLIST = getMockData();
 
@@ -19,7 +19,7 @@ const WishlistView = (santaslist) => (
   <App>
     <PageBanner
       action={() => console.log(`logging out`)}
-      title="Naughty or Nice"
+      title="Santas Check List:"
     />
     <WishCardContainer>
       {santaslist.map((list) => (
@@ -29,11 +29,11 @@ const WishlistView = (santaslist) => (
   </App>
 );
 
-const HomeView = (santaslist) => (
+const HomeView = () => (
   <App>
     <PageBanner
       action={() => console.log(`Logging out!`)}
-      title="Santas naughty or nice list!"
+      title="NAUGHTY OR NICE "
     />
     <WishCardContainer />
   </App>
@@ -41,17 +41,17 @@ const HomeView = (santaslist) => (
 
 const FormView = () => (
   <App>
-    <StageBanner
+    <PageBanner
       action={() => console.log(`Logging out!`)}
-      title="Add a kid to the naughty or nice list:"
+      title="Add A child to the naughty or nice list:"
     />
-    <CardContainer />
+    <WishCardContainer />
   </App>
 );
 
 m.route(root, "/home", {
   "/home": {
-    view: () => HomeView(SANTASLIST),
+    view: () => HomeView(),
   },
   "/santas-list": {
     view: () => WishlistView(SANTASLIST),
