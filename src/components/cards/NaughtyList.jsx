@@ -6,7 +6,7 @@ const NaughtyList = {
     <div class="wish-card">
       <div class="wish-fields">
         <WishField fieldValue={`${attrs.list.name} ${attrs.list.location}`} />
-        <WishField fieldValue={<i class="fas fa-angry" />} />
+        <WishField fieldValue={<i class="fas fa-frown" />} />
       </div>
     </div>
   ),
