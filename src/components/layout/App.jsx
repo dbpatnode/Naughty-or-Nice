@@ -26,16 +26,6 @@ const WishlistView = (santaslist) => [
   </WishCardContainer>,
 ];
 
-// const ConferenceView = conferences => [
-//   <StageBanner
-//     action={() => console.log(`Logging out!`)}
-//     title="Conferences"
-//   />,
-//   <CardContainer>
-//     {conferences.map(conference => <ConferenceCard conference={conference} />)}
-//   </CardContainer>
-// ];
-
 const HomeView = () => [
   <PageBanner
     action={() => console.log(`Logging out!`)}
