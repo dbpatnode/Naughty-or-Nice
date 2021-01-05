@@ -17,22 +17,22 @@ const EntryForm = {
       <label for="naughty-or-nice">{`We're they Naughty or Nice? `}</label>
       <label for="naughty">{`Naughty:`}</label>
       <input
-        type="radio"
+        type="checkbox"
         id="naughty"
         name="naughty"
         onclick={() => {
-          vnode.state.naughty = true;
-          //   console.log(vnode.state.naughty);
+          vnode.state.naughty = !vnode.state.naughty;
+          console.log("naughty", vnode.state.naughty);
         }}
       />
       <label for="nice">{`Nice:`}</label>
       <input
-        type="radio"
+        type="checkbox"
         id="nice"
         name="nice"
         onclick={() => {
-          vnode.state.nice = true;
-          console.log(vnode.state.nice);
+          vnode.state.nice = !vnode.state.nice;
+          console.log("nice", vnode.state.nice);
         }}
       />
       <UIButton
