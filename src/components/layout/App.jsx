@@ -10,6 +10,7 @@ import WishCardContainer from "../../components/layout/WishCardContainer.jsx";
 import WishCard from "../../components/cards/WishCard.jsx";
 import NaughtyList from "../../components/cards/NaughtyList.jsx";
 import NiceList from "../../components/cards/NiceList.jsx";
+import EntryForm from "../../components/EntryForm.jsx";
 
 // fake data
 import getMockData from "../../store/data";
@@ -63,26 +64,15 @@ const NaughtyListView = (santaslist) => [
   </WishCardContainer>,
 ];
 
-// const CFPView = (conferences) => [
-//   <StageBanner
-//     action={() => console.log(`Logging out!`)}
-//     title="Call for Papers"
-//   />,
-//   <CardContainer>
-//     {conferences
-//       .filter((conference) => conference.CFP)
-//       .map((conferenceWithCFP) => (
-//         <CFPCard cfp={true} conference={conferenceWithCFP} />
-//       ))}
-//   </CardContainer>,
-// ];
 // we're returning arrays that contain these components(note the commas between components)
 const FormView = () => [
   <PageBanner
     action={() => console.log(`Logging out!`)}
     title="Add A child to the naughty or nice list:"
   />,
-  <WishCardContainer />,
+  <WishCardContainer>
+    <EntryForm />
+  </WishCardContainer>,
 ];
 
 const App = {
