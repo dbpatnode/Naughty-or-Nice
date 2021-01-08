@@ -1,12 +1,13 @@
 const m = require("mithril");
 import WishField from "./WishField.jsx";
+import { frown } from "../../services/svg.jsx"
 
 const NaughtyList = {
   view: ({ attrs }) => (
     <div class="wish-card">
       <div class="wish-fields">
         <WishField fieldValue={`${attrs.list.name} ${attrs.list.location}`} />
-        <WishField fieldValue={<i class="fas fa-frown" />} />
+        <WishField fieldValue={frown} />
       </div>
     </div>
   ),

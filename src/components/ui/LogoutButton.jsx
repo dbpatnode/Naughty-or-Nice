@@ -1,9 +1,10 @@
 const m = require("mithril");
+import { logout } from "../../services/svg.jsx"
 
 const LogoutButton = {
   view: ({ attrs }) => (
     <div onclick={attrs.action}>
-      <i class="fas fa-sign-out-alt" />
+      {logout}
     </div>
   ),
 };
