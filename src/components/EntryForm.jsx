@@ -2,10 +2,7 @@ const m = require("mithril");
 import UIButton from "./ui/UIButton.jsx";
 
 
-const styles = {
-naughty: { color: 'red' },
-nice: { color: 'green' },
-}
+
 
 const EntryForm = {
   // below how you write state with Mithril (very similar to React)
@@ -20,11 +17,15 @@ const EntryForm = {
       <label for="child-name">{`Childs Name`}</label>
       <input id="child-name" type="text" name="name" />
       <label for="location">{`Location (City, State)`}</label>
-      <input id="location" type="text" name="location" />
+      <input
+        id="location"
+        type="text"
+        name="location"
+      />
       <label for="naughty-or-nice">{`We're they Naughty or Nice? `}</label>
-      
+
       <label for="naughty">
-        {`Naughty:`}
+        {`naughty:`}
         <input
           type="checkbox"
           // hidden
@@ -36,14 +37,10 @@ const EntryForm = {
             console.log("naughty", vnode.state.naughty);
           }}
         />
-
-        {/* Can't figure out how to get this ternary to change color on click...*/}
-      <span> <i class="far fa-frown" style={vnode.state.naughty != false ? 'color: red' : 'color: black'}/> </span>
-        </label>
-       
-        <label for="nice">
+        <span>{<i class="far fa-frown" style={vnode.state.naughty != false ? 'color: red' : 'color: black'} />}</span>
+      </label>
+      <label for="nice">
         {`Nice:`}
-          
         <input
           type="checkbox"
           // hidden
@@ -52,20 +49,37 @@ const EntryForm = {
           onclick={() => {
             // on click change to opposite of whatever state was before)
             vnode.state.nice = !vnode.state.nice;
-            
             console.log("nice", vnode.state.nice);
           }}
         />
-    
-        <span>{<i class="far fa-smile" style={vnode.state.naughty != false ? 'color: green' : 'color: black'}/>}</span>
-        </label>
-      
+        <span>{<i class="far fa-smile" style={vnode.state.naughty != false ? 'color: green' : 'color: black'} />}</span>
+      </label>
 
-      <UIButton
+
+
+      {/* {vnode.state.nice == false ?
+        <button
+          // class="far fa-smile"
+          onclick={() => vnode.state.nice = !vnode.state.nice}
+        >
+          {console.log(vnode.state.nice)}
+        </button>
+        :
+        <button
+          // class="far fa-smile"
+          style="color: green"
+          onclick={() => vnode.state.nice = !vnode.state.nice}
+        >
+          {/* {console.log(vnode.state.nice)} */}
+      {/* </button> */}
+      {/* } * /} */}
+
+
+      < UIButton
         action={() => console.log(`Adding to list...`)}
         buttonName="Add to list"
       />
-    </form>
+    </form >
   ),
 };
 
