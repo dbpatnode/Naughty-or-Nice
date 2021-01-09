@@ -39,6 +39,8 @@ const WishlistView = (santaslist) => [
   </WishCardContainer>,
 ];
 
+
+// we're returning arrays that contain these components(note the commas between components)
 const NiceListView = (santaslist) => [
   <PageBanner
     action={() => console.log("logging out")}
@@ -53,6 +55,7 @@ const NiceListView = (santaslist) => [
   </WishCardContainer>,
 ];
 
+// we're returning arrays that contain these components(note the commas between components)
 const NaughtyListView = (santaslist) => [
   <PageBanner action={() => console.log("logging out")} title="NAUGHTY LIST" />,
   <WishCardContainer>
@@ -75,12 +78,18 @@ const FormView = () => [
   </WishCardContainer>,
 ];
 
+
+// using lifecycle methods to ensure navigation menu
+// always loads
 const App = {
   // oncreate lifecycle method hook is activated after DOM ele is created.
-  // guaranteed to run @ end of render lifecycle, better fopr to get layout
+  // guaranteed to run @ end of render lifecycle, better for getting layout
   // values or elements.
   // lifecycle method hooks are at the same level as the view property.
+
+
   oncreate: (vnode) => {
+    // plain old javascript
     const mainPage = vnode.dom.querySelector(".main-page");
 
     m.route(mainPage, "/home", {
@@ -101,6 +110,7 @@ const App = {
       },
     });
   },
+
   view: ({ children }) => (
     <div class="App">
       <MainPage> {children}</MainPage>
