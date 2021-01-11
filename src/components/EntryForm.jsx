@@ -27,15 +27,23 @@ const EntryForm = {
         <input
           type="button"
           hidden
-          id="naughty"
+
           name="naughty"
-          onclick={() => {
-            // on click change to opposite of whatever state was before)
-            vnode.state.naughty = !vnode.state.naughty;
-            console.log("naughty", vnode.state.naughty);
-          }}
+
         />
-        <span>{<i style={vnode.state.naughty != false ? 'color: red' : 'color: black'} >{frown}</i>}</span>
+        <span>
+          {<i
+            id="naughty"
+            onclick={() => {
+              // on click change to opposite of whatever state was before)
+              vnode.state.naughty = !vnode.state.naughty;
+              console.log("naughty", vnode.state.naughty);
+            }}
+            style={vnode.state.naughty == true ? 'color: red' : 'color: black'}
+          >
+            {frown}
+          </i>}
+        </span>
       </label>
       <label for="nice">
         {`Nice:`}
@@ -44,13 +52,18 @@ const EntryForm = {
           hidden
           id="nice"
           name="nice"
-          onclick={() => {
-            // on click change to opposite of whatever state was before)
-            vnode.state.nice = !vnode.state.nice;
-            console.log("nice", vnode.state.nice);
-          }}
         />
-        <span>{<i style={vnode.state.nice != false ? 'color: green' : 'color: black'} >{smile}</i>}</span>
+        <span>
+          {<i
+            id="nice"
+            onclick={() => {
+              // on click change to opposite of whatever state was before)
+              vnode.state.nice = !vnode.state.nice;
+              console.log("nice", vnode.state.nice);
+            }}
+            style={vnode.state.nice == true ? 'color: green' : 'color: black'} >
+            {smile}</i>}
+        </span>
       </label>
 
       < UIButton
