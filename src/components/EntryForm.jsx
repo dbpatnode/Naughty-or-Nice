@@ -29,7 +29,7 @@ const entryFormHandler = formDOM => {
   // newEntry["CFPCompleted"] = newEntry.CFP ? false : "null";
   // newEntry["naughty"] = EntryForm.data.state.naughty
   // newEntry["nice"] = EntryForm.data.state.nice
-
+  console.log(newEntry)
   setMockData(newEntry)
 
   entryForm.reset();
@@ -54,47 +54,91 @@ const EntryForm = {
       />
       <label for="naughty-or-nice">{`We're they Naughty or Nice? `}</label>
 
-      <label for="naughty">
-        {`Naughty:`}
-        <input
-          type="button"
-          hidden
-          name="naughty"
-        />
-        <span>
-          {<i
+      {vnode.state.naughty == true ?
+        <label
+          for="naughty"
+          class="naughty-true"
+        // style="color: red"
+        >
+          {frown}
+          <input
+            type="checkbox"
+            hidden
+            name="naughty"
             id="naughty"
+            value={vnode.state.naughty}
             onclick={() => {
               // on click change to opposite of whatever state was before)
               vnode.state.naughty = !vnode.state.naughty;
               console.log("naughty", vnode.state.naughty);
             }}
-            style={vnode.state.naughty == true ? 'color: red' : 'color: black'}
-          >
-            {frown}
-          </i>}
-        </span>
-      </label>
-      <label for="nice">
-        {`Nice:`}
-        <input
-          type="button"
-          hidden
-          id="nice"
-          name="nice"
-        />
-        <span>
-          {<i
-            id="nice"
+          />
+        </label>
+        :
+
+        <label
+          for="naughty"
+          class="naughty-false"
+        // style="color: black"
+        // style="cursor: pointer"
+        >
+          {frown}
+          <input
+            type="checkbox"
+            hidden
+            name="naughty"
+            id="naughty"
+            value={vnode.state.naughty}
             onclick={() => {
               // on click change to opposite of whatever state was before)
-              vnode.state.nice = !vnode.state.nice;
-              console.log("nice", vnode.state.nice);
+              vnode.state.naughty = !vnode.state.naughty;
+              console.log("naughty", vnode.state.naughty);
             }}
-            style={vnode.state.nice == true ? 'color: green' : 'color: black'} >
-            {smile}</i>}
-        </span>
-      </label>
+          />
+        </label>
+      }
+
+
+      {
+        vnode.state.nice == true ?
+          <label
+            for="nice"
+            style="color: green"
+          >
+
+            {smile}
+            <input
+              type="checkbox"
+              hidden
+              id="nice"
+              name="nice"
+              value={vnode.state.nice}
+              onclick={() => {
+                // on click change to opposite of whatever state was before)
+                vnode.state.nice = !vnode.state.nice;
+                console.log("nice", vnode.state.nice);
+              }}
+            />
+          </label>
+          :
+          <label
+            for="nice"
+            style="color: black">
+            {smile}
+            <input
+              type="checkbox"
+              hidden
+              id="nice"
+              name="nice"
+              value={vnode.state.nice}
+              onclick={() => {
+                // on click change to opposite of whatever state was before)
+                vnode.state.nice = !vnode.state.nice;
+                console.log("nice", vnode.state.nice);
+              }}
+            />
+          </label>
+      }
 
       < UIButton
         action={() => entryFormHandler(vnode.dom)}

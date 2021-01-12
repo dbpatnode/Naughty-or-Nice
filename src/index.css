@@ -1,15 +1,14 @@
-#naughty {
+.naughty-true {
   cursor: pointer;
+  color: red
+}
 
-  &:hover {
-    color: red;
-  }
+
+.naughty-false {
+  cursor: pointer;
+  color: black
 }
 
 #nice {
   cursor: pointer;
-
-  &:hover {
-    color: green;
-  }
 }
