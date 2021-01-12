@@ -13,7 +13,8 @@ import NiceList from "../../components/cards/NiceList.jsx";
 import EntryForm from "../../components/EntryForm.jsx";
 
 // fake data
-import getMockData from "../../store/data";
+import { getMockData } from "../../store/data";
+
 const SANTASLIST = getMockData();
 
 // we're returning arrays that contain these components(note the commas between components)

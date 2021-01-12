@@ -1,7 +1,15 @@
 #naughty {
-cursor: pointer;
+  cursor: pointer;
+
+  &:hover {
+    color: red;
+  }
 }
 
 #nice {
-  cursor:pointer
+  cursor: pointer;
+
+  &:hover {
+    color: green;
+  }
 }

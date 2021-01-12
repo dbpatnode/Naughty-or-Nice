@@ -25,6 +25,5 @@ const SANTASLIST = [
   },
 ];
 
-const getMockData = () => SANTASLIST;
-
-export default getMockData;
+exports.getMockData = () => SANTASLIST
+exports.setMockData = santaslist => SANTASLIST.push(santaslist)

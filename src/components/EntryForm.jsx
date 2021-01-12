@@ -1,6 +1,39 @@
 const m = require("mithril");
 import UIButton from "./ui/UIButton.jsx";
 import { frown, smile } from "../services/svg.jsx"
+import { setMockData } from "../store/data";
+
+
+const entryFormHandler = formDOM => {
+  const formData = new FormData(formDOM);
+  const newEntry = {};
+
+  Array.from(formData.entries()).map(entryValue => {
+    const key = entryValue[0];
+    const value = entryValue[1];
+
+    switch (value) {
+      case "false":
+        newEntry[key] = false;
+        break;
+      case "true":
+        newEntry[key] = true;
+        break;
+      default:
+        newEntry[key] = value;
+        break;
+    }
+  });
+
+  // newEntry["favorite"] = false;
+  // newEntry["CFPCompleted"] = newEntry.CFP ? false : "null";
+  // newEntry["naughty"] = EntryForm.data.state.naughty
+  // newEntry["nice"] = EntryForm.data.state.nice
+
+  setMockData(newEntry)
+
+  entryForm.reset();
+};
 
 const EntryForm = {
   // below how you write state with Mithril (very similar to React)
@@ -8,7 +41,6 @@ const EntryForm = {
     nice: false,
     naughty: false,
   },
-
 
   view: (vnode) => (
     <form name="entry-form" id="entry-form">
@@ -23,13 +55,11 @@ const EntryForm = {
       <label for="naughty-or-nice">{`We're they Naughty or Nice? `}</label>
 
       <label for="naughty">
-        {`naughty:`}
+        {`Naughty:`}
         <input
           type="button"
           hidden
-
           name="naughty"
-
         />
         <span>
           {<i
@@ -67,7 +97,7 @@ const EntryForm = {
       </label>
 
       < UIButton
-        action={() => console.log(`Adding to list...`)}
+        action={() => entryFormHandler(vnode.dom)}
         buttonName="Add to list"
       />
     </form >
