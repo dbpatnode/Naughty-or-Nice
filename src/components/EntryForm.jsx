@@ -103,7 +103,8 @@ const EntryForm = {
         vnode.state.nice == true ?
           <label
             for="nice"
-            style="color: green"
+            class="nice-true"
+          // style="color: green"
           >
 
             {smile}
@@ -123,7 +124,8 @@ const EntryForm = {
           :
           <label
             for="nice"
-            style="color: black">
+            class="nice-false"
+          >
             {smile}
             <input
               type="checkbox"
