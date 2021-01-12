@@ -54,12 +54,10 @@ const EntryForm = {
       />
       <label for="naughty-or-nice">{`We're they Naughty or Nice? `}</label>
 
+
+      {/* TERNARY FOR CHANGING CLASS NAME (STYLING) */}
       {vnode.state.naughty == true ?
-        <label
-          for="naughty"
-          class="naughty-true"
-        // style="color: red"
-        >
+        <label for="naughty" class="naughty-true" >
           {frown}
           <input
             type="checkbox"
@@ -75,13 +73,7 @@ const EntryForm = {
           />
         </label>
         :
-
-        <label
-          for="naughty"
-          class="naughty-false"
-        // style="color: black"
-        // style="cursor: pointer"
-        >
+        <label for="naughty" class="naughty-false">
           {frown}
           <input
             type="checkbox"
@@ -97,8 +89,7 @@ const EntryForm = {
           />
         </label>
       }
-
-
+      {`:`}
       {
         vnode.state.nice == true ?
           <label
