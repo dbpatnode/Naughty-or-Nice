@@ -35,12 +35,14 @@ const entryFormHandler = formDOM => {
   entryForm.reset();
 };
 
+
 const EntryForm = {
   // below how you write state with Mithril (very similar to React)
   data: {
     nice: false,
     naughty: false,
   },
+
 
   view: (vnode) => (
     <form name="entry-form" id="entry-form">
@@ -72,6 +74,7 @@ const EntryForm = {
             }}
           />
         </label>
+
         :
         <label for="naughty" class="naughty-false">
           {frown}
@@ -95,7 +98,6 @@ const EntryForm = {
           <label
             for="nice"
             class="nice-true"
-          // style="color: green"
           >
 
             {smile}

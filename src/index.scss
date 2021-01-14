@@ -1,0 +1,155 @@
+
+// // Add person Form 
+// //////////
+// // FORM//
+// ///////// 
+// // if naughty == true then this 
+
+// .naughty-true {
+//   cursor: pointer;
+//   color: red;
+//   padding-left: 5px;
+//   padding-right: 10px;
+// }
+// .naughty-true:hover{
+//   cursor:pointer;
+//   color: rgb(248, 114, 114);
+// } 
+
+// //  if naughty == false then this 
+// .naughty-false {
+//   cursor: pointer;
+//   color: black;
+//   padding-left: 5px;
+//   padding-right: 10px;
+// }
+
+// .naughty-false:hover {
+//   cursor: pointer;
+//   color: darkgrey
+// } 
+
+// // if nice == true then this 
+// .nice-true {
+//   cursor: pointer;
+//   color: green;
+//   padding: 10px;
+// }
+// .nice-true:hover{
+//   cursor:pointer;
+//   color: lightgreen;
+// } 
+
+// // if nice == false then this 
+// .nice-false {
+//   cursor: pointer;
+//   color: black;
+//   padding:10px
+// }
+
+// .nice-false:hover {
+//   cursor: pointer;
+//   color: darkgrey
+// } 
+
+// //  Main page
+// .main-page {
+//  flex:10;
+//  display: flex;
+//  flex-direction: column;
+//  padding: 1em
+// } 
+
+// //  page titles
+// .page-banner{
+//   position: relative;
+//   align-items: center;
+// }
+// .page-title {
+//     align-content: center;
+//     display: flex;
+//     flex-direction: column;
+//     height: 100%;
+//     width: 100%;
+//     font-family: 'Rubik', sans-serif;
+//     color: red;
+// } 
+
+
+.naughty-true {
+  cursor: pointer;
+  color: red;
+  padding-left: 5px;
+  padding-right: 10px;
+
+  &:hover {
+    cursor: pointer;
+    color: rgb(248, 114, 114);
+  }
+}
+
+//  if naughty == false then this
+
+.naughty-false {
+  cursor: pointer;
+  color: black;
+  padding-left: 5px;
+  padding-right: 10px;
+
+  &:hover {
+    cursor: pointer;
+    color: darkgrey;
+  }
+}
+
+// if nice == true then this
+
+.nice-true {
+  cursor: pointer;
+  color: green;
+  padding: 10px;
+
+  &:hover {
+    cursor: pointer;
+    color: lightgreen;
+  }
+}
+
+// if nice == false then this
+
+.nice-false {
+  cursor: pointer;
+  color: black;
+  padding: 10px;
+
+  &:hover {
+    cursor: pointer;
+    color: darkgrey;
+  }
+}
+
+//  Main page
+
+.main-page {
+  flex: 10;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+//  page titles
+
+.page-banner {
+  position: relative;
+  align-items: center;
+}
+
+.page-title {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  font-family: 'Rubik', sans-serif;
+  color: red;
+}
