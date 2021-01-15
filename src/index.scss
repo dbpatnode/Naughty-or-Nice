@@ -110,3 +110,12 @@
 //   cursor: pointer;
 // }
 // .new{color: rgb(228, 114, 114)}
+
+.nav-item{
+  text-decoration: none;
+
+
+  &:hover {
+    color: rgb(102, 163, 102) !important
+  }
+}
