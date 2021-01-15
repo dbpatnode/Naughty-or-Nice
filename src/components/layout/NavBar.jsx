@@ -2,7 +2,7 @@ const m = require("mithril");
 
 import NavButton from "../ui/NavButton.jsx";
 import { home, list, smile, frown, add } from "../../services/svg.jsx"
-import img from "../../services/santa.png"
+import img from "../../services/images/santa.png"
 
 const NavBar = {
   view: () => (

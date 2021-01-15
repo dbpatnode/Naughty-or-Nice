@@ -3,6 +3,7 @@ const m = require("mithril");
 // Make sure to always include .jsx (unlike React where you dont have to specify)
 import MainPage from "./MainPage.jsx";
 import NavBar from "./NavBar.jsx";
+import HomeContainer from "./HomeContainer.jsx"
 
 // Components
 import PageBanner from "../../components/ui/PageBanner.jsx";
@@ -11,6 +12,7 @@ import WishCard from "../../components/cards/WishCard.jsx";
 import NaughtyList from "../../components/cards/NaughtyList.jsx";
 import NiceList from "../../components/cards/NiceList.jsx";
 import EntryForm from "../../components/EntryForm.jsx";
+// import HomeContainer from "../../components/HomeContainer.jsx"
 
 // fake data
 import { getMockData } from "../../store/data";
@@ -23,7 +25,7 @@ const HomeView = () => [
     action={() => console.log(`Logging out!`)}
     title="NAUGHTY OR NICE "
   />,
-  <WishCardContainer />,
+  <HomeContainer />,
 ];
 
 // we're returning arrays that contain these components(note the commas between components)

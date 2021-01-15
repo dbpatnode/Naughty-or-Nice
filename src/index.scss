@@ -113,9 +113,10 @@
 
 .nav-item{
   text-decoration: none;
-
+  padding-right:45px;
+  padding-left:45px;
 
   &:hover {
-    color: rgb(102, 163, 102) !important
+    color: rgb(202, 240, 202) !important
   }
 }
