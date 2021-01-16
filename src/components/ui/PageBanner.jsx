@@ -5,9 +5,16 @@ import LogoutButton from "./LogoutButton.jsx";
 
 const PageBanner = {
   view: ({ attrs }) => (
-    <div class="page-banner">
-      <PageTitle title={attrs.title} />
-      <LogoutButton action={attrs.action} />
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col">
+          <PageTitle title={attrs.title} />
+        </div>
+        <div class="col-6">{``}</div>
+        <div class="col">
+          <LogoutButton action={attrs.action} />
+        </div>
+      </div>
     </div>
   ),
 };

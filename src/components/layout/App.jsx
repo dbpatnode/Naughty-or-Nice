@@ -33,7 +33,7 @@ const HomeView = () => [
 const WishlistView = (santaslist) => [
   <PageBanner
     action={() => console.log(`logging out`)}
-    title="Santas Check List:"
+    title="SANTAS LIST"
   />,
   <WishCardContainer>
     {santaslist.map((list) => (
@@ -47,7 +47,7 @@ const WishlistView = (santaslist) => [
 const NiceListView = (santaslist) => [
   <PageBanner
     action={() => console.log("logging out")}
-    title="Check out whos on the nicelist!"
+    title="NICE LIST"
   />,
   <WishCardContainer>
     {santaslist
@@ -74,7 +74,7 @@ const NaughtyListView = (santaslist) => [
 const FormView = () => [
   <PageBanner
     action={() => console.log(`Logging out!`)}
-    title="Add A child to the naughty or nice list:"
+    title="ADD SOMEONE ELSE TO THE LIST"
   />,
   <WishCardContainer>
     <EntryForm />

@@ -3,9 +3,12 @@ import { logout } from "../../services/svg.jsx"
 
 const LogoutButton = {
   view: ({ attrs }) => (
-    <div onclick={attrs.action}>
-      {logout}
-    </div>
+    <button type="button"
+      class="btn btn-outline-secondary"
+      // style="border: 1px solid light gray"
+      onclick={attrs.action} >
+      { logout}
+    </button >
   ),
 };
 

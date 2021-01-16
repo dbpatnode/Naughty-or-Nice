@@ -1,80 +1,80 @@
 
-// #app {
-//   display: flex;
-//   flex-direction: column;
-//   height: 100%;
-//   width: 100%;
-//   background: white;
-//   font-family: 'Rubik', sans-serif;
-// }
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: white;
+  font-family: 'Rubik', sans-serif;
+}
 
-// .naughty-true {
-//   cursor: pointer;
-//   color: red;
-//   padding-left: 5px;
-//   padding-right: 10px;
+.naughty-true {
+  cursor: pointer;
+  color: red;
+  padding-left: 5px;
+  padding-right: 10px;
 
-//   &:hover {
-//     cursor: pointer;
-//     color: rgb(248, 114, 114);
-//   }
-// }
+  &:hover {
+    cursor: pointer;
+    color: rgb(248, 114, 114);
+  }
+}
 
-// //  if naughty == false then this
+//  if naughty == false then this
 
-// .naughty-false {
-//   cursor: pointer;
-//   color: black;
-//   padding-left: 5px;
-//   padding-right: 10px;
+.naughty-false {
+  cursor: pointer;
+  color: black;
+  padding-left: 5px;
+  padding-right: 10px;
 
-//   &:hover {
-//     cursor: pointer;
-//     color: darkgrey;
-//   }
-// }
+  &:hover {
+    cursor: pointer;
+    color: darkgrey;
+  }
+}
 
-// // if nice == true then this
+// if nice == true then this
 
-// .nice-true {
-//   cursor: pointer;
-//   color: green;
-//   padding: 10px;
+.nice-true {
+  cursor: pointer;
+  color: green;
+  padding: 10px;
 
-//   &:hover {
-//     cursor: pointer;
-//     color: lightgreen;
-//   }
-// }
+  &:hover {
+    cursor: pointer;
+    color: lightgreen;
+  }
+}
 
-// // if nice == false then this
+// if nice == false then this
 
-// .nice-false {
-//   cursor: pointer;
-//   color: black;
-//   padding: 10px;
+.nice-false {
+  cursor: pointer;
+  color: black;
+  padding: 10px;
 
-//   &:hover {
-//     cursor: pointer;
-//     color: darkgrey;
-//   }
-// }
+  &:hover {
+    cursor: pointer;
+    color: darkgrey;
+  }
+}
 
-// //  Main page
+//  Main page
 
-// .main-page {
-//   flex: 10;
-//   display: flex;
-//   flex-direction: column;
-//   padding: 1em;
-// }
+.main-page {
+  flex: 10;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
 
-// //  page titles
+//  page titles
 
-// .page-banner {
-//   position: relative;
-//   align-items: center;
-// }
+.page-banner {
+  position: relative;
+  align-items: center;
+}
 
 // .page-title {
 //   align-content: center;
@@ -93,14 +93,14 @@
 //   align-items: center;
 //   background: #EE5F28;
 
-//   path {
-//     display: inline-block;
-//     font-size: inherit;
-//     height: 1em;
-//     overflow: visible;
-//     vertical-align: -.125em;
-//     border: 1px solid white;
-//   }
+  // path {
+  //   display: inline-block;
+  //   font-size: inherit;
+  //   height: 1em;
+  //   overflow: visible;
+  //   vertical-align: -.125em;
+  //   border: 1px solid white;
+  // }
 // }
 
 // .nav-button {
@@ -120,3 +120,13 @@
     color: rgb(202, 240, 202) !important
   }
 }
+
+.container {
+  img{
+  margin:0 auto;
+  height:50%!important;
+  width:auto !important;
+  max-height:800px !important;
+  }
+}
+
