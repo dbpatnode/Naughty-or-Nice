@@ -22,7 +22,9 @@
     "webpack-dev-server": "^3.1.0"
   },
   "dependencies": {
+    "@popperjs/core": "^2.6.0",
     "auth0-js": "^9.3.1",
+    "bootstrap": "^5.0.0-beta1",
     "mithril": "^1.1.6",
     "node-sass": "^5.0.0",
     "scss": "^0.2.4"

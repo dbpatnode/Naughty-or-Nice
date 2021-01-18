@@ -6,7 +6,7 @@ import LogoutButton from "./LogoutButton.jsx";
 const PageBanner = {
   view: ({ attrs }) => (
     <div class="container">
-      <div class="row align-items-start">
+      <div class="row align-items-center">
         <div class="col">
           <PageTitle title={attrs.title} />
         </div>

@@ -1,3 +1,7 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// @import "../node_modules/bootstrap/scss/bootstrap";
 
 #app {
   display: flex;
@@ -110,6 +114,12 @@
 //   cursor: pointer;
 // }
 // .new{color: rgb(228, 114, 114)}
+
+$primary: rgb(228, 114, 114);
+
+$theme-colors: (
+  "primary": $primary
+);
 
 .nav-item{
   text-decoration: none;
