@@ -1,7 +1,4 @@
-// Custom.scss
-// Option A: Include all of Bootstrap
 
-// @import "../node_modules/bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Pirata+One|Bilbo+Swash+Caps&display=swap');
 
 @font-face {
@@ -215,32 +212,14 @@ main {
   height: 100%;
 }
 
-// .cachet {
-//   /* image width = 210px and height = 250px */
-//   /*  5 is the common denominator 210 = 5 * 42 */
-//   width: calc((100vw * 5) / 42);
-//   height: auto;
-//   margin-top: 4rem;
-//   margin-left: auto;
-// }
-
-// .cachet img {
-//   object-fit: cover;
-//   width: 30%;
-//   height: 30%;
-// }
-
 .seal {
-  /* image width = 357px and height = 355px */
-//   /*  5 is the common denominator 210 = 5 * 42 */
   margin-top: 4rem;
-  width:20vh;
+  width:15vh;
   height: auto;
   margin-top: 4rem;
   margin-left: auto;
-//   height: 10px;
-//   width: 10px
 }
+
 #signature {
   text-align: right;
   color: black;
