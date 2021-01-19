@@ -39,6 +39,7 @@ const WishlistView = (santaslist) => [
     {santaslist.map((list) => (
       <WishCard list={list} />
     ))}
+
   </WishCardContainer>,
 ];
 
@@ -64,8 +65,8 @@ const NaughtyListView = (santaslist) => [
   <WishCardContainer>
     {santaslist
       .filter((list) => list.naughty)
-      .map((nice) => (
-        <NaughtyList naughty={true} list={nice} />
+      .map((naughty) => (
+        <NaughtyList naughty={true} list={naughty} />
       ))}
   </WishCardContainer>,
 ];
