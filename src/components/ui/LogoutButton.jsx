@@ -5,6 +5,8 @@ const LogoutButton = {
   view: ({ attrs }) => (
     <button type="button"
       class="btn btn-outline-primary"
+      id="logout-button"
+      style="color: rgb(228, 114, 114);"
       // style="border: 1px solid light gray"
       onclick={attrs.action} >
       { logout}

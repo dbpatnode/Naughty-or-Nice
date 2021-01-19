@@ -129,14 +129,40 @@ $theme-colors: (
   &:hover {
     color: rgb(202, 240, 202) !important
   }
+  
+}
+
+#logout-button {
+  color: $primary;
+  border: 1px solid $primary;
+  &:hover {
+    color: white !important;
+    background: $primary
+  }
 }
 
 .container {
-  img{
-  margin:0 auto;
-  height:50%!important;
-  width:auto !important;
-  max-height:800px !important;
-  }
+  width: 85%;
+  margin-bottom:10px !important;
+  padding:10px;
+  border-bottom: 1px solid black;
+    img{
+    margin:0 auto;
+    height:auto !important;
+    width:auto !important;
+    max-height:70vh !important;
+    }
+    h3 {
+      margin:0 auto;
+      height:auto !important;
+      width:auto !important;
+      max-height:70vh !important;
+    }
+    p {
+      margin:0 auto;
+      height:auto !important;
+      width:auto !important;
+      max-height:70vh !important;
+    }
 }
 
