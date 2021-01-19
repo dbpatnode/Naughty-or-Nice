@@ -60,7 +60,7 @@ const NiceListView = (santaslist) => [
 
 // we're returning arrays that contain these components(note the commas between components)
 const NaughtyListView = (santaslist) => [
-  <PageBanner action={() => console.log("logging out")} title="NAUGHTY LIST" />,
+  // <PageBanner action={() => console.log("logging out")} title="NAUGHTY LIST" />,
   <WishCardContainer>
     {santaslist
       .filter((list) => list.naughty)
