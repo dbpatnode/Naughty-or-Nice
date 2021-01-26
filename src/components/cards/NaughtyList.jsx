@@ -10,7 +10,6 @@ const NaughtyList = {
   view: ({ children }) => (
 
     <div>
-      {/* <div class="container"> */}
       <div id="parchment">
         <div class="container" id="contain">
           <p id="labarum"><img src={header} /></p>

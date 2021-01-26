@@ -53,11 +53,11 @@ const NiceListView = (santaslist) => [
     title="NICE LIST"
   />,
   <WishCardContainer>
-    {santaslist
-      .filter((list) => list.nice)
-      .map((nice) => (
-        <NiceList nice={true} list={nice} />
+    <NiceList >
+      {santaslist.filter((person) => person.nice).map((person) => (
+        <WishField name={person.name} location={person.location} emoji={frown} />
       ))}
+    </NiceList>
   </WishCardContainer>,
 ];
 
