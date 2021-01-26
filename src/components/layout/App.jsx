@@ -15,20 +15,18 @@ import EntryForm from "../../components/EntryForm.jsx";
 import WishField from "../../components/cards/WishField.jsx"
 import { frown, smile } from "../../services/svg.jsx"
 
-// import HomeContainer from "../../components/HomeContainer.jsx"
-
-// fake data
+// grabbing fake data
 import { getMockData } from "../../store/data";
 
 const SANTASLIST = getMockData();
 
-// we're returning arrays that contain these components(note the commas between components)
+// we're returning arrays that contain these components (note the commas between components)
 const HomeView = () => [
   <PageBanner
     action={() => console.log(`Logging out!`)}
     title="NAUGHTY OR NICE "
   />,
-  <HomeContainer />,
+  <HomeContainer />
 ];
 
 // we're returning arrays that contain these components(note the commas between components)
@@ -37,10 +35,14 @@ const EntireListView = (santaslist) => [
   <WishCardContainer>
     <EntireList >
       {santaslist.map((person) => (
-        <WishField name={person.name} location={person.location} />
+        person.naughty == true ?
+          <WishField name={person.name} location={person.location} emoji={frown} />
+          :
+          <WishField name={person.name} location={person.location} emoji={smile} />
       ))}
     </EntireList>
-  </WishCardContainer>,
+  </WishCardContainer>
+
 ];
 
 
@@ -56,7 +58,7 @@ const NiceListView = (santaslist) => [
         <WishField name={person.name} location={person.location} emoji={smile} />
       ))}
     </NiceList>
-  </WishCardContainer>,
+  </WishCardContainer>
 ];
 
 // we're returning arrays that contain these components(note the commas between components)
@@ -68,7 +70,7 @@ const NaughtyListView = (santaslist) => [
         <WishField name={person.name} location={person.location} emoji={frown} />
       ))}
     </NaughtyList>
-  </WishCardContainer>,
+  </WishCardContainer>
 ];
 
 // we're returning arrays that contain these components(note the commas between components)
