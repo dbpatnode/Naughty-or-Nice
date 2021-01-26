@@ -23,6 +23,12 @@ const SANTASLIST = [
     naughty: false,
     nice: true,
   },
+  {
+    name: "Alec",
+    location: "somewhere, TX",
+    naughty: true,
+    nice: false,
+  },
 ];
 
 exports.getMockData = () => SANTASLIST

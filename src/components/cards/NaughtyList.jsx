@@ -1,33 +1,30 @@
 const m = require("mithril");
 import WishField from "./WishField.jsx";
-import { frown } from "../../services/svg.jsx"
+
 import header from "../../services/images/header.png"
 import seal from "../../services/images/seal.png"
 
 
 const NaughtyList = {
 
-  view: ({ attrs }) => (
+  view: ({ children }) => (
+
     <div>
       {/* <div class="container"> */}
-      <div class="wish-card" id="parchment">
+      <div id="parchment">
         <div class="container" id="contain">
           <p id="labarum"><img src={header} /></p>
           <p class="inkTitle">The Naughty List</p>
-
-
-          <WishField
-            fieldValue={`${attrs.list.name} ${attrs.list.location}`}
-            emoji={frown} />
-          <div id="signature">
+          {children}
+          < div id="signature">
             <p class="cachet"><img class="seal" src={seal} /></p>
           Santa Clause<br />123 Elf Road North Pole
-          </div>
-        </div>
-      </div>
-    </div >
 
+        </div>
+        </div>
+      </div >
+    </div>
   ),
 };
 
-export default NaughtyList;
+export default NaughtyList

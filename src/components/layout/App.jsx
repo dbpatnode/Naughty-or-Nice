@@ -12,6 +12,8 @@ import WishCard from "../../components/cards/WishCard.jsx";
 import NaughtyList from "../../components/cards/NaughtyList.jsx";
 import NiceList from "../../components/cards/NiceList.jsx";
 import EntryForm from "../../components/EntryForm.jsx";
+import WishField from "../../components/cards/WishField.jsx"
+import { frown } from "../../services/svg.jsx"
 // import HomeContainer from "../../components/HomeContainer.jsx"
 
 // fake data
@@ -63,11 +65,11 @@ const NiceListView = (santaslist) => [
 const NaughtyListView = (santaslist) => [
   // <PageBanner action={() => console.log("logging out")} title="NAUGHTY LIST" />,
   <WishCardContainer>
-    {santaslist
-      .filter((list) => list.naughty)
-      .map((naughty) => (
-        <NaughtyList naughty={true} list={naughty} />
+    <NaughtyList >
+      {santaslist.filter((person) => person.naughty).map((person) => (
+        <WishField name={person.name} location={person.location} emoji={frown} />
       ))}
+    </NaughtyList>
   </WishCardContainer>,
 ];
 
