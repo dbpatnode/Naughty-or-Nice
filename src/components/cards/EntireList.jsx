@@ -2,16 +2,13 @@ const m = require("mithril");
 import header from "../../services/images/header.png"
 import seal from "../../services/images/seal.png"
 
-
-const NaughtyList = {
-
+const EntireList = {
   view: ({ children }) => (
-
     <div>
       <div id="parchment">
         <div class="container" id="contain">
           <p id="labarum"><img src={header} /></p>
-          <p class="inkTitle">The Naughty List</p>
+          <p class="inkTitle">Santas List</p>
           {children}
           < div id="signature">
             <p class="cachet"><img class="seal" src={seal} /></p>
@@ -24,4 +21,4 @@ const NaughtyList = {
   ),
 };
 
-export default NaughtyList
+export default EntireList;

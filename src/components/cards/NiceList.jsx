@@ -1,6 +1,4 @@
 const m = require("mithril");
-import WishField from "./WishField.jsx";
-import { smile } from "../../services/svg.jsx"
 import header from "../../services/images/header.png"
 import seal from "../../services/images/seal.png"
 const NiceList = {

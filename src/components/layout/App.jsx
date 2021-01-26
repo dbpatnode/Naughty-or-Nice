@@ -8,12 +8,13 @@ import HomeContainer from "./HomeContainer.jsx"
 // Components
 import PageBanner from "../../components/ui/PageBanner.jsx";
 import WishCardContainer from "../../components/layout/WishCardContainer.jsx";
-import WishCard from "../../components/cards/WishCard.jsx";
+import EntireList from "../cards/EntireList.jsx";
 import NaughtyList from "../../components/cards/NaughtyList.jsx";
 import NiceList from "../../components/cards/NiceList.jsx";
 import EntryForm from "../../components/EntryForm.jsx";
 import WishField from "../../components/cards/WishField.jsx"
-import { frown } from "../../services/svg.jsx"
+import { frown, smile } from "../../services/svg.jsx"
+
 // import HomeContainer from "../../components/HomeContainer.jsx"
 
 // fake data
@@ -32,16 +33,13 @@ const HomeView = () => [
 
 // we're returning arrays that contain these components(note the commas between components)
 
-const WishlistView = (santaslist) => [
-  <PageBanner
-    action={() => console.log(`logging out`)}
-    title="SANTAS LIST"
-  />,
+const EntireListView = (santaslist) => [
   <WishCardContainer>
-    {santaslist.map((list) => (
-      <WishCard list={list} />
-    ))}
-
+    <EntireList >
+      {santaslist.map((person) => (
+        <WishField name={person.name} location={person.location} />
+      ))}
+    </EntireList>
   </WishCardContainer>,
 ];
 
@@ -55,7 +53,7 @@ const NiceListView = (santaslist) => [
   <WishCardContainer>
     <NiceList >
       {santaslist.filter((person) => person.nice).map((person) => (
-        <WishField name={person.name} location={person.location} emoji={frown} />
+        <WishField name={person.name} location={person.location} emoji={smile} />
       ))}
     </NiceList>
   </WishCardContainer>,
@@ -95,7 +93,7 @@ const App = {
 
 
   oncreate: (vnode) => {
-    // plain old javascript
+    // plain old javascript grabbing the main-page class and appending the nave routes to it
     const mainPage = vnode.dom.querySelector(".main-page");
 
     m.route(mainPage, "/home", {
@@ -103,7 +101,7 @@ const App = {
         view: () => HomeView(),
       },
       "/santas-list": {
-        view: () => WishlistView(SANTASLIST),
+        view: () => EntireListView(SANTASLIST),
       },
       "/add-child": {
         view: () => FormView(),
@@ -124,4 +122,5 @@ const App = {
     </div>
   ),
 };
+
 export default App;
