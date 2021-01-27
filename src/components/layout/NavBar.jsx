@@ -22,10 +22,10 @@ const NavBar = {
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             {/* paths can be named whatever you want */}
             <NavButton path={`home`} icon={home} linkText={` HOME`} />
-            <NavButton path={`santas-list`} icon={list} linkText={` THE LIST`} />
+            <NavButton path={`santas-list`} icon={list} linkText={` SANTAS LIST`} />
             <NavButton path={`nice-list`} icon={smile} linkText={` NICE LIST`} />
             <NavButton path={`naughty-list`} icon={frown} linkText={` NAUGHTY LIST`} />
-            <NavButton path={`add-child`} icon={add} linkText={` ADD CHILD TO LIST`} />
+            <NavButton path={`add-child`} icon={add} linkText={` ADD SOMEONE TO SANTAS LIST`} />
           </ul>
         </div>
       </div>

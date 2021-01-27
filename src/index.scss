@@ -8,7 +8,14 @@
 
 
 $primary: rgb(228, 114, 114);
+$main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+
+//////////////////
+//ADD CHILD FORM//
+//////////////////
+
+// classes for adding color on click of radios
 .naughty-true {
   cursor: pointer;
   color: red;
@@ -61,47 +68,30 @@ $primary: rgb(228, 114, 114);
   }
 }
 
-//  Main page
 
-.main-page {
-  flex: 10;
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-}
+////////////
+//HOMEPAGE//
+////////////
 
-//  page titles
-
-.page-banner {
-  position: relative;
-  align-items: center;
-}
-
-
-.nav-item{
-  text-decoration: none;
-  padding-right:45px;
-  padding-left:45px;
-
-  &:hover {
-    color: rgb(202, 240, 202) !important
-  }
-}
-
-#logout-button {
-  color: $primary;
-  border: 1px solid $primary;
-  &:hover {
-    color: white !important;
-    background: $primary
-  }
+.snow-bg {
+  position: absolute;
+  background-image: url('https://i.imgur.com/iX5APT5.gif');
+  background-size: cover;
+  top:0px;
+  bottom: 0px;
+  left:0px;
+  right:0px;
+  
+  height: 100vh;
+  padding:0;
+  margin:0;
 }
 
 #home {
   width: 85% !important;
   // margin-bottom:10px !important;
   padding:10px !important;
-  border-bottom: 1px solid black;
+  // border-bottom: 1px solid black;
     img{
     margin:0 auto;
     height:auto !important;
@@ -123,6 +113,49 @@ $primary: rgb(228, 114, 114);
 }
 
 
+.main-page {
+  flex: 10;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+///////////////
+//PAGE BANNER//
+///////////////
+.page-banner {
+  position: relative;
+  align-items: center;
+}
+
+.page-title {
+  font-family: $main-text
+}
+
+///////////
+//NAV BAR//
+///////////
+.nav-item{
+  color:rgb(77, 75, 75) !important;
+  font-family: $main-text;
+  font-weight: bold;
+  // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-decoration: none;
+  padding-right:45px;
+  padding-left:45px;
+
+  &:hover {
+    color: rgb(253, 253, 253) !important
+  }
+}
+
+#logout-button {
+  color: $primary;
+  border: 1px solid $primary;
+  &:hover {
+    color: white !important;
+    background: $primary
+  }
+}
 
 
 :root {
@@ -141,8 +174,25 @@ html, body {
 
 body {
   font: var(--fontSize)/200% 'Bilbo Swash Caps', cursive;
+  // background-image: url(https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  // background-size: cover;
+}
+
+.list {
+  position: absolute;
+  // position: absolute;
+  top:0;
+  right:0px;
+  bottom:0px;
+  left:0px;
+  // height:600%;
+  width:100%;
+  
   background-image: url(https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
-  background-size: cover;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  overflow: auto;
 }
 
 main {
@@ -160,7 +210,8 @@ main {
   margin: 2em 0;
 	padding: 4em;
 	box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
-	background: #fffef0;
+  background: #fffef0;
+  padding-bottom: 7em;
   /* v2.1 : borders effect with SVG : try to play with scale to change them */
   filter: url(#wavy2);
   /* v2.2 : Noise added for a vellum paper effect */

@@ -3,7 +3,7 @@ import header from "../../services/images/header.png"
 import seal from "../../services/images/seal.png"
 const NiceList = {
   view: ({ children }) => (
-    <div>
+    <div class="list">
       <div id="parchment">
         <div class="container" id="contain">
           <p id="labarum"><img src={header} /></p>

@@ -22,11 +22,13 @@ const SANTASLIST = getMockData();
 
 // we're returning arrays that contain these components (note the commas between components)
 const HomeView = () => [
-  <PageBanner
-    action={() => console.log(`Logging out!`)}
-    title="NAUGHTY OR NICE "
-  />,
+  <div class="snow-bg">
+    <PageBanner
+      action={() => console.log(`Logging out!`)}
+      title="NAUGHTY OR NICE "
+    />,
   <HomeContainer />
+  </div>
 ];
 
 // we're returning arrays that contain these components(note the commas between components)
@@ -48,10 +50,10 @@ const EntireListView = (santaslist) => [
 
 // we're returning arrays that contain these components(note the commas between components)
 const NiceListView = (santaslist) => [
-  <PageBanner
-    action={() => console.log("logging out")}
-    title="NICE LIST"
-  />,
+  // <PageBanner
+  //   action={() => console.log("logging out")}
+  //   title="NICE LIST"
+  // />,
   <WishCardContainer>
     <NiceList >
       {santaslist.filter((person) => person.nice).map((person) => (

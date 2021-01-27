@@ -4,7 +4,7 @@ import seal from "../../services/images/seal.png"
 
 const EntireList = {
   view: ({ children }) => (
-    <div>
+    <div class="list">
       <div id="parchment">
         <div class="container" id="contain">
           <p id="labarum"><img src={header} /></p>
