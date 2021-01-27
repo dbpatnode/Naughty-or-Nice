@@ -133,8 +133,16 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 ///////////
 //NAV BAR//
 ///////////
+
+// drop shadows for nav links 
+
+
 .navbar {
  background-color:rgb(165, 12, 12)
+//   .bi  {
+//   -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))!important;
+//   filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))!important;
+// }
 }
 .nav-item{
   color:rgb(255, 255, 255) !important;
@@ -151,18 +159,32 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(243, 200, 200) !important;
     text-shadow: none;
   }
+
+  .bi {
+    -webkit-filter: drop-shadow( 3px 3px 2px rgb(255, 0, 0))!important;
+      filter: drop-shadow( 3px 3px 2px #ff0000);
+  }
+     &:hover {
+        filter: drop-shadow(none)
+    }
 }
 
 .navbar-brand{
   font-family: caudex;
   font-size: 1.7em;
   color: white !important;
-  img {
-    width: 1.5em;
-    height: 1.5em;
-  }
+
 }
 
+#logo{
+    width: 95%;
+    height: 95%;
+}
+
+#santa-icon {
+  width: 1.5em;
+  height: 1.5em;
+}
 #logout-button {
   color: $primary;
   border: 1px solid $primary;

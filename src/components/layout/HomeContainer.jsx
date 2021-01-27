@@ -6,7 +6,10 @@ import treat from "../../services/images/treat.jpeg"
 const HomeContainer = {
   view: () => (
 
+
+
     <div class="container" id="home">
+      <p>Scroll down to see more</p>
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">

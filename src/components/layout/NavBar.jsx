@@ -1,8 +1,9 @@
 const m = require("mithril");
 
 import NavButton from "../ui/NavButton.jsx";
-import { home, list, navSmile, navFrown, add, map } from "../../services/svg.jsx"
-import img from "../../services/images/santa.png"
+import { list, navSmile, navFrown, add, map } from "../../services/svg.jsx"
+import santaIcon from "../../services/images/santa.png"
+import logo from "../../services/images/logo.png"
 
 const NavBar = {
   view: () => (
@@ -10,9 +11,9 @@ const NavBar = {
     <nav class="navbar fixed-bottom navbar-expand-lg navbar-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          Naughty or Nice
 
-          <img src={img} alt=""></img>
+          <img src={logo} alt="naughty or nice logo" id="logo"></img>
+          {/* <img src={santaIcon} alt="santa icon" id="santa-icon"></img> */}
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
