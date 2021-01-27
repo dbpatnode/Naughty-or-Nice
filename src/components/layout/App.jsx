@@ -26,8 +26,8 @@ const HomeView = () => [
     <PageBanner
       action={() => console.log(`Logging out!`)}
       title="NAUGHTY OR NICE "
-    />,
-  <HomeContainer />
+    />
+    <HomeContainer />
   </div>
 ];
 

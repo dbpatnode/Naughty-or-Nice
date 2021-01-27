@@ -7,7 +7,7 @@
   }
 
 
-$primary: rgb(228, 114, 114);
+$primary: rgb(165, 12, 12);
 $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 
@@ -86,31 +86,102 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin:0;
 }
 
-#home {
-  width: 85% !important;
-  // margin-bottom:10px !important;
-  padding:10px !important;
-  // border-bottom: 1px solid black;
-    img{
-    margin:0 auto;
-    height:auto !important;
-    width:auto !important;
-    max-height:70vh !important;
-    }
-    h3 {
-      margin:0 auto;
-      height:auto !important;
-      width:auto !important;
-      max-height:70vh !important;
-    }
-    p {
-      margin:0 auto;
-      height:auto !important;
-      width:auto !important;
-      max-height:70vh !important;
-    }
-}
+// #home {
+//   width: 85% !important;
+//   // margin-bottom:10px !important;
+//   padding:10px !important;
+//   // border-bottom: 1px solid black;
+//     img{
+//     margin:0 auto;
+//     height:auto !important;
+//     width:auto !important;
+//     max-height:70vh !important;
+//     }
+//     h3 {
+//       margin:0 auto;
+//       height:auto !important;
+//       width:auto !important;
+//       max-height:70vh !important;
+//     }
+//     p {
+//       margin:0 auto;
+//       height:auto !important;
+//       width:auto !important;
+//       max-height:70vh !important;
+//     }
+// }
 
+// bouncing down arrow
+.downArrow{
+	position: fixed;
+	bottom: 10%;
+  left: 50%;
+  img {
+    color: $primary
+  }
+}
+.bounce {
+	-moz-animation: bounce 3s infinite;
+	-webkit-animation: bounce 3s infinite;
+	animation: bounce 3s infinite;
+}
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+/* Demo Purpose Only*/
+.demo {
+  font-family: 'Raleway', sans-serif;
+	color:#fff;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0;
+    text-align: center;
+}
 
 .main-page {
   flex: 10;
@@ -181,12 +252,21 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height: 95%;
 }
 
-#santa-icon {
-  width: 1.5em;
-  height: 1.5em;
+// #santa-icon {
+//   width: 1.5em;
+//   height: 1.5em;
+// }
+
+.logout-button-position{
+  position:fixed;
+  top:5%;
+  left:92%
 }
+
 #logout-button {
+  box-shadow: 2px 3px 3px rgba(165, 12, 12, 0.205);
   color: $primary;
+  background-color: rgba(255, 255, 255, 0.404);
   border: 1px solid $primary;
   &:hover {
     color: white !important;

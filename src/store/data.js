@@ -12,7 +12,7 @@ const SANTASLIST = [
     nice: true,
   },
   {
-    name: "Rowan",
+    name: "Rowen",
     location: "Arvada, CO",
     naughty: false,
     nice: true,
