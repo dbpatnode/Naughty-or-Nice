@@ -6,15 +6,12 @@ import img from "../../services/images/santa.png"
 
 const NavBar = {
   view: () => (
-    <nav class="navbar fixed-bottom navbar-expand-lg navbar-light" style="background-color: rgb(228, 114, 114)">
-      {/* <div class="nav-bar"> */}
+    // <nav class="navbar fixed-bottom navbar-expand-lg navbar-light" style="background-color: rgb(228, 114, 114)">
+    <nav class="navbar fixed-bottom navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        {/* button that pulls up nav menu when displayed on phone screen */}
-
-        {/* home path set to the app title in the navbar */}
         <a class="navbar-brand" href="#">
           Naughty or Nice
-          {/* <img src={img} alt="" width="" height="24" class="d-inline-block align-top"></img> */}
+
           <img src={img} alt=""></img>
         </a>
 

@@ -133,8 +133,11 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 ///////////
 //NAV BAR//
 ///////////
+.navbar {
+ background-color:rgb(165, 12, 12)
+}
 .nav-item{
-  color:rgb(77, 75, 75) !important;
+  color:rgb(255, 255, 255) !important;
   font-family: $main-text;
   font-weight: bold;
   // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -142,9 +145,11 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding-right:45px;
   padding-left:45px;
   padding-top:7px;
+  text-shadow: 2px 2px #ff0000;
 
   &:hover {
-    color: rgb(253, 253, 253) !important
+    color: rgb(243, 200, 200) !important;
+    text-shadow: none;
   }
 }
 
