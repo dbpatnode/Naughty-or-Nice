@@ -75,17 +75,112 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 .snow-bg {
   position: absolute;
-  background-image: url('https://i.imgur.com/iX5APT5.gif');
+  // display: flex;
   background-size: cover;
   top:0px;
   bottom: 0px;
   left:0px;
   right:0px;
   height: 100vh;
-  padding:0;
-  margin:0;
+  // padding:0;
+  // margin:0;
+  background-image: url('https://i.imgur.com/iX5APT5.gif');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1{
+    color: white;
+    font-size: 8em;
+    text-align: center;
+  }
+
+  // h1 span {
+  //   background: linear-gradient(rgba(0, 0, 0, 0) 65%, rgba(255, 255, 255, 0.3) 35%)
+  // }
 }
 
+
+.screen {
+  height: 100vh;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right:0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 95%);
+}
+
+.flex {
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  height: 300px;
+  margin: 10px 0;
+  width: 30%;
+  color: red;
+  font-size: 1em;
+}
+
+.double {
+  size: 2em;
+  margin-top: 100px;
+  width: 55%;
+  background-image: url("https://nypost.com/wp-content/uploads/sites/2/2018/12/shutterstock_1197190882.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.double-2 {
+  background-image: url("https://images.unsplash.com/photo-1437422061949-f6efbde0a471?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=3743c450231eda3df43a243f1cca2fc0");
+}
+
+p {
+  text-align: justify;
+}
+
+#more {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-image: url("https://static.pexels.com/photos/371633/pexels-photo-371633.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.second-screen {
+  background: rgba(0, 0, 0, 0.77);
+}
+
+.second-screen p {
+  color: white;
+  width: 80%;
+  margin: 7% auto;
+  font-size: 20px;
+  line-height: 170%;
+}
+
+a {
+  color: #27D;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+.screen a {
+  font-size: 16px;
+}
 // #home {
 //   width: 85% !important;
 //   // margin-bottom:10px !important;
@@ -174,21 +269,21 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
 }
 /* Demo Purpose Only*/
-.demo {
-  font-family: 'Raleway', sans-serif;
-	color:#fff;
-    display: block;
-    margin: 0 auto;
-    padding: 15px 0;
-    text-align: center;
-}
+// .demo {
+//   font-family: 'Raleway', sans-serif;
+// 	color:#fff;
+//     display: block;
+//     margin: 0 auto;
+//     padding: 15px 0;
+//     text-align: center;
+// }
 
-.main-page {
-  flex: 10;
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-}
+// .main-page {
+//   flex: 10;
+//   display: flex;
+//   flex-direction: column;
+//   padding: 1em;
+// }
 ///////////////
 //PAGE BANNER//
 ///////////////
@@ -207,13 +302,23 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 // drop shadows for nav links 
 
+@media only screen and (min-width: 768px){
+    .navbar{
+    background-color: $primary;
+    height: 12%
+  }
+}
 
+@media only screen and (max-width: 768px) {
 .navbar {
- background-color:rgb(165, 12, 12)
+ background-color:rgb(165, 12, 12);
+ 
+//  height: 70px;
 //   .bi  {
 //   -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))!important;
 //   filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))!important;
 // }
+}
 }
 .nav-item{
   color:rgb(255, 255, 255) !important;
@@ -287,7 +392,8 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 html, body {
-	height: 100%;
+  background: white;
+  scroll-behavior: smooth;
 }
 
 // body {
