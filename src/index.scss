@@ -72,8 +72,13 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 ////////////
 //HOMEPAGE//
 ////////////
-
+#home {
+  width: 100vw;
+  height: 100vh;
+}
 .snow-bg {
+
+
   position: absolute;
   // display: flex;
   background-size: cover;
@@ -142,6 +147,10 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .double-2 {
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
   background-image: url("https://images.unsplash.com/photo-1437422061949-f6efbde0a471?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=3743c450231eda3df43a243f1cca2fc0");
 }
 
@@ -150,13 +159,19 @@ p {
 }
 
 #more {
+
   height: 100vh;
   width: 100vw;
+  // top:0px;
+  // bottom: 0px;
+  // left:0px;
+  // right:300px;
   position: relative;
   background-image: url("https://static.pexels.com/photos/371633/pexels-photo-371633.jpeg");
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // align-content: left;
 }
 
 .second-screen {
@@ -164,6 +179,7 @@ p {
 }
 
 .second-screen p {
+  left:100px;
   color: white;
   width: 80%;
   margin: 7% auto;
@@ -181,30 +197,7 @@ a {
 .screen a {
   font-size: 16px;
 }
-// #home {
-//   width: 85% !important;
-//   // margin-bottom:10px !important;
-//   padding:10px !important;
-//   // border-bottom: 1px solid black;
-//     img{
-//     margin:0 auto;
-//     height:auto !important;
-//     width:auto !important;
-//     max-height:70vh !important;
-//     }
-//     h3 {
-//       margin:0 auto;
-//       height:auto !important;
-//       width:auto !important;
-//       max-height:70vh !important;
-//     }
-//     p {
-//       margin:0 auto;
-//       height:auto !important;
-//       width:auto !important;
-//       max-height:70vh !important;
-//     }
-// }
+
 
 // bouncing down arrow
 .downArrow{
@@ -302,6 +295,17 @@ a {
 
 // drop shadows for nav links 
 
+
+// .navbar {
+//    background-color:rgb(165, 12, 12);
+// }
+@media only screen and (max-width: 768px){
+  .navbar{
+  background-color: $primary;
+  align-items: center;
+}
+}
+
 @media only screen and (min-width: 768px){
     .navbar{
     background-color: $primary;
@@ -309,17 +313,17 @@ a {
   }
 }
 
-@media only screen and (max-width: 768px) {
-.navbar {
- background-color:rgb(165, 12, 12);
+// @media only screen and (max-width: 768px) {
+// .navbar {
+//  background-color:rgb(165, 12, 12);
  
 //  height: 70px;
 //   .bi  {
 //   -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))!important;
 //   filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))!important;
 // }
-}
-}
+// }
+// }
 .nav-item{
   color:rgb(255, 255, 255) !important;
   font-family: $main-text;
@@ -482,6 +486,7 @@ html, body {
 }
 
 .seal {
+  // left:75;
   margin-top: 4rem;
   width:15vh;
   height: auto;
@@ -494,3 +499,26 @@ html, body {
   color: black;
   font-size: 250%;
 }
+.cachet {
+  position: relative;
+  padding-left: 85%;
+  margin-top:0;
+}
+// @media screen and (max-width: 1400px) {
+// .cachet {
+//   position: relative;
+//   padding-left: 85%;
+//   margin-top:0;
+// }
+// }
+// @media screen and (min-width: 768px) {
+//   .cachet {
+//     // position: relative;
+//     padding-left: 10%;
+//   }
+// }
+
+// @media screen and (min-width: 800px) {
+//   body {
+//     background-color: lavender;
+//   }
