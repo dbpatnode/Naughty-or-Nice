@@ -22,13 +22,13 @@ const SANTASLIST = getMockData();
 
 // we're returning arrays that contain these components (note the commas between components)
 const HomeView = () => [
-  <div class="snow-bg">
-    <PageBanner
-      action={() => console.log(`Logging out!`)}
-      title="NAUGHTY OR NICE "
-    />
-    <HomeContainer />
-  </div>
+
+  // <PageBanner
+  //   action={() => console.log(`Logging out!`)}
+  //   title="NAUGHTY OR NICE "
+  // />
+  <HomeContainer />
+
 ];
 
 // we're returning arrays that contain these components(note the commas between components)

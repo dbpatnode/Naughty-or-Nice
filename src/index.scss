@@ -1,4 +1,4 @@
-
+// @import url("../src/services/images/logo.png");
 @import url('https://fonts.googleapis.com/css?family=Pirata+One|Bilbo+Swash+Caps&display=swap');
 
 @font-face {
@@ -72,133 +72,189 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 ////////////
 //HOMEPAGE//
 ////////////
-#home {
-  width: 100vw;
-  height: 100vh;
+.home{
+// display: flex;
+align-items: center;
+justify-content: center;
+// overflow: hidden;
+width: 100vw;
+height: 100vh;
+color: #000;
+background-color: #D8D8D8;
+font-family: 'Maitree', serif;
 }
-.snow-bg {
 
-
-  position: absolute;
-  // display: flex;
-  background-size: cover;
-  top:0px;
-  bottom: 0px;
-  left:0px;
-  right:0px;
-  height: 100vh;
-  // padding:0;
-  // margin:0;
-  background-image: url('https://i.imgur.com/iX5APT5.gif');
+.ParallaxImage {
   background-attachment: fixed;
-  background-position: center;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-
+  padding-bottom: 100px;
+  padding-top: 100px;
+  height:600px;
   h1{
-    color: white;
-    font-size: 8em;
-    text-align: center;
+    text-align:center;
+    }
+  
+    h3 {
+      margin: calc(50vh - 250px) auto 0 auto;
+      color:white ;
+      font-size: 65px;
+      text-transform: uppercase;
+      // font-family: "Archivo Black", "Archivo", sans-serif;
+      // font-weight: normal;
+      // display: block;
+      // height: auto;
+      // text-align: center;
   }
-
-  // h1 span {
-  //   background: linear-gradient(rgba(0, 0, 0, 0) 65%, rgba(255, 255, 255, 0.3) 35%)
-  // }
 }
 
+.home-title span{
+  position: relative;
+  overflow: hidden;
+  display: block;
+  line-height: 1.2;
+
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    // color:black;
+    background-color: clear;
+    background:   linear-gradient(to left, rgb(255, 255, 255) 60%, rgba(255, 255, 255, 0) 95%);;
+    animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(-101%);
+  }
+
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background:  rgba(255, 255, 255, 0.541);
+    animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
+    transform: translateX(0);
+  }
+}
+
+.home-title span:nth-of-type(1)::before,
+.home-title span:nth-of-type(1)::after{
+    animation-delay: 1s;
+}
+
+.home-title span:nth-of-type(2)::before,
+.home-title span:nth-of-type(2)::after{
+    animation-delay: 1.5s;
+}
+
+@keyframes a-ltr-after{
+  0% {transform: translateX(-100%)}
+  100% {transform: translateX(101%)}
+}
+
+@keyframes a-ltr-before{
+  0% {transform: translateX(0)}
+  100% {transform: translateX(200%)}
+}
+
+.home-container { 
+  text-align: center;
+  display: block;
+
+  img {
+    width:45%
+    
+  }
+}
 
 .screen {
   height: 100vh;
   position: absolute;
-  width: 100vw;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right:0;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 95%);
-}
-
-.flex {
-  width: 90%;
-  margin: 40px auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.item {
-  height: 300px;
-  margin: 10px 0;
-  width: 30%;
-  color: red;
-  font-size: 1em;
-}
-
-.double {
-  size: 2em;
-  margin-top: 100px;
-  width: 55%;
-  background-image: url("https://nypost.com/wp-content/uploads/sites/2/2018/12/shutterstock_1197190882.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.double-2 {
+  width: 100%;
   top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  background-image: url("https://images.unsplash.com/photo-1437422061949-f6efbde0a471?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=3743c450231eda3df43a243f1cca2fc0");
+  padding-bottom:100px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, black 95%);
 }
 
-p {
-  text-align: justify;
+.bg1 {
+background-image:
+linear-gradient(to top,transparent 30%,rgba(255, 251, 251, 0.95) 100%, #02020200),
+url("https://i.ytimg.com/vi/pEUNT5sERBw/maxresdefault.jpg");
+float:left;
+width:100%;
+height:600px;
+box-shadow: 0 50px 50px white;
+
+}
+.bg2 {
+background-image: url("https://i.gifer.com/4zAg.gif");
+}
+.bg3 {
+background-image: url("https://media1.giphy.com/media/eegAmwegAYHTGBkQJj/giphy.gif");
+// background: linear-gradient(0deg, rgb(255, 253, 253) 15%, rgba(0,0,0,0) 100%);
 }
 
-#more {
-
-  height: 100vh;
-  width: 100vw;
-  // top:0px;
-  // bottom: 0px;
-  // left:0px;
-  // right:300px;
-  position: relative;
-  background-image: url("https://static.pexels.com/photos/371633/pexels-photo-371633.jpeg");
-  background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // align-content: left;
+.bg4 {
+  
+  background: rgb(165,12,12);
+  background: linear-gradient(0deg, rgba(165,12,12,1) 0%, rgba(0,0,0,0) 100%);
 }
 
-.second-screen {
-  background: rgba(0, 0, 0, 0.77);
-}
 
-.second-screen p {
-  left:100px;
-  color: white;
-  width: 80%;
-  margin: 7% auto;
-  font-size: 20px;
-  line-height: 170%;
-}
+/* Content Parallax Section*/
+.ParallaxContent {
+  background: none repeat scroll 0 0 #ffffff00;
+  padding: 42px 0;
+  color:rgb(80, 77, 77);	
+  h3{
+    color:rgb(80, 77, 77);	
+    text-align:center;
+    }
+  p{
+    color:rgb(80, 77, 77);	
+    text-align:center;
+  }
+} 
 
-a {
-  color: #27D;
-  font-weight: bold;
-  text-decoration: none;
-  margin: 15px 0;
-}
 
-.screen a {
+/* General Section*/
+.container {
+margin: 0 auto;
+padding:0 12px;
+}
+.headlines h2 {
+  color: #fff;
+  font-size: 32px;
+  margin: 0;
+text-align: center;
+}
+.headlines p {
   font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+color:#4e4b4b;
+text-align: center;
 }
-
-
+@media (min-width: 768px) {
+.container {
+  width: 750px;
+}
+}
+@media (min-width: 992px) {
+.container {
+  width: 970px;
+}
+}
+@media (min-width: 1200px) {
+.container {
+  width: 1024px;
+}
+}
 // bouncing down arrow
 .downArrow{
 	position: fixed;
@@ -261,22 +317,7 @@ a {
     transform: translateY(-15px);
   }
 }
-/* Demo Purpose Only*/
-// .demo {
-//   font-family: 'Raleway', sans-serif;
-// 	color:#fff;
-//     display: block;
-//     margin: 0 auto;
-//     padding: 15px 0;
-//     text-align: center;
-// }
 
-// .main-page {
-//   flex: 10;
-//   display: flex;
-//   flex-direction: column;
-//   padding: 1em;
-// }
 ///////////////
 //PAGE BANNER//
 ///////////////
@@ -302,7 +343,7 @@ a {
 @media only screen and (max-width: 768px){
   .navbar{
   background-color: $primary;
-  align-items: center;
+  // align-items: center;
 }
 }
 
@@ -367,12 +408,13 @@ a {
 // }
 
 .logout-button-position{
-  position:fixed;
+  position:relative;
   top:5%;
   left:92%
 }
 
 #logout-button {
+  
   box-shadow: 2px 3px 3px rgba(165, 12, 12, 0.205);
   color: $primary;
   background-color: rgba(255, 255, 255, 0.404);
