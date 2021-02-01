@@ -1,6 +1,6 @@
 const m = require("mithril");
 import logo from "../../services/images/logo.png"
-import lights from "../../services/videos/lights.mp4"
+import list from "../../services/images/list-screenshot.png"
 
 const HomeContainer = {
 
@@ -34,10 +34,11 @@ const HomeContainer = {
           <div class="headlines">
             <h3>View people on santas list!</h3>
             {/* <p>Support wide range of browsers</p> */}
-          </div>
-          <p>See who was good or bad this year... </p>
 
-          <p>Mauris a scelerisque nulla, a porta libero. Integer laoreet justo id orci auctor consequat. Suspendisse luctus nulla felis, ac semper nisl venenatis vitae. In hac habitasse platea dictumst. Suspendisse bibendum consectetur rutrum. In sagittis fringilla elit sit amet consequat. In et pretium mauris. Aliquam gravida dolor in odio hendrerit gravida.</p>
+            {/* <p>See who was good or bad this year... </p> */}
+
+            <a href="#!/santas-list"><img src={list}></img></a>
+          </div>
         </div>
       </div>
 

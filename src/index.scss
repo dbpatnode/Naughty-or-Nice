@@ -123,7 +123,7 @@ font-family: 'Maitree', serif;
     width: 100%;
     height: 100%;
     // color:black;
-    background-color: clear;
+    // background-color: clear;
     background:   linear-gradient(to left, rgb(255, 255, 255) 60%, rgba(255, 255, 255, 0) 95%);;
     animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
     transform: translateX(-101%);
@@ -167,19 +167,11 @@ font-family: 'Maitree', serif;
   display: block;
 
   img {
-    width:45%
+    width:25%
     
   }
 }
 
-.screen {
-  height: 100vh;
-  position: absolute;
-  width: 100%;
-  top:0;
-  padding-bottom:100px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, black 95%);
-}
 
 .bg1 {
 background-image:
@@ -188,7 +180,7 @@ url("https://i.ytimg.com/vi/pEUNT5sERBw/maxresdefault.jpg");
 float:left;
 width:100%;
 height:600px;
-box-shadow: 0 50px 50px white;
+// box-shadow: 0 50px 50px white;
 
 }
 .bg2 {
@@ -210,13 +202,13 @@ background-image: url("https://media1.giphy.com/media/eegAmwegAYHTGBkQJj/giphy.g
 .ParallaxContent {
   background: none repeat scroll 0 0 #ffffff00;
   padding: 42px 0;
-  color:rgb(80, 77, 77);	
+  // color:rgb(80, 77, 77);	
   h3{
-    color:rgb(80, 77, 77);	
+    // color:rgb(80, 77, 77);	
     text-align:center;
     }
   p{
-    color:rgb(80, 77, 77);	
+    // color:rgb(80, 77, 77);	
     text-align:center;
   }
 } 
@@ -228,17 +220,20 @@ margin: 0 auto;
 padding:0 12px;
 }
 .headlines h2 {
-  color: #fff;
-  font-size: 32px;
-  margin: 0;
-text-align: center;
-}
-.headlines p {
-  font-size: 16px;
-  font-weight: 300;
-  margin: 0;
-color:#4e4b4b;
-text-align: center;
+    color: #fff;
+    font-size: 32px;
+    margin: 0;
+  text-align: center;
+  p {
+  h3 {
+    background-color: white;
+  }
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+  color:#4e4b4b;
+  text-align: center;
+  }
 }
 @media (min-width: 768px) {
 .container {
@@ -530,7 +525,7 @@ html, body {
 .seal {
   // left:75;
   margin-top: 4rem;
-  width:15vh;
+  width:100%;
   height: auto;
   margin-top: 4rem;
   margin-left: auto;
