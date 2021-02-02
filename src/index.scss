@@ -73,17 +73,18 @@ $main-text:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 //HOMEPAGE//
 ////////////
 .home{
-// display: flex;
+
 align-items: center;
 justify-content: center;
-// overflow: hidden;
 width: 100vw;
 height: 100vh;
 color: #000;
-background-color: #D8D8D8;
 font-family: 'Maitree', serif;
 }
 
+#first-subheading{
+  padding-top: 20px;
+}
 .ParallaxImage {
   background-attachment: fixed;
   background-position: 50% 50%;
@@ -101,11 +102,6 @@ font-family: 'Maitree', serif;
       color:white ;
       font-size: 65px;
       text-transform: uppercase;
-      // font-family: "Archivo Black", "Archivo", sans-serif;
-      // font-weight: normal;
-      // display: block;
-      // height: auto;
-      // text-align: center;
   }
 }
 
@@ -175,7 +171,7 @@ font-family: 'Maitree', serif;
 
 .bg1 {
 background-image:
-linear-gradient(to top,transparent 30%,rgba(255, 251, 251, 0.95) 100%, #02020200),
+// linear-gradient(to top,transparent 30%,rgba(255, 251, 251, 0.95) 100%, #02020200),
 url("https://i.ytimg.com/vi/pEUNT5sERBw/maxresdefault.jpg");
 float:left;
 width:100%;
@@ -192,9 +188,9 @@ background-image: url("https://media1.giphy.com/media/eegAmwegAYHTGBkQJj/giphy.g
 }
 
 .bg4 {
-  
-  background: rgb(165,12,12);
-  background: linear-gradient(0deg, rgba(165,12,12,1) 0%, rgba(0,0,0,0) 100%);
+  background-image: url("https://laserchristmaslightsonline.com/wp-content/uploads/2019/06/AdobeStock_220035489-1600x1066.jpeg");
+  // background: rgb(165,12,12);
+  // background: linear-gradient(0deg, rgba(165,12,12,1) 0%, rgba(0,0,0,0) 100%);
 }
 
 
