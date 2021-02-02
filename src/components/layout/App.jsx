@@ -18,6 +18,8 @@ import { frown, smile } from "../../services/svg.jsx"
 // grabbing fake data
 import { getMockData } from "../../store/data";
 
+import header from "../../services/images/header.png"
+
 const SANTASLIST = getMockData();
 
 // we're returning arrays that contain these components (note the commas between components)
@@ -77,12 +79,15 @@ const NaughtyListView = (santaslist) => [
 
 // we're returning arrays that contain these components(note the commas between components)
 const FormView = () => [
-  <PageBanner
-    action={() => console.log(`Logging out!`)}
-    title="ADD SOMEONE ELSE TO THE LIST"
-  />,
+  // <PageBanner
+  //   action={() => console.log(`Logging out!`)}
+  //   title="ADD SOMEONE ELSE TO THE LIST"
+  // />,
   <WishCardContainer>
-    <EntryForm />
+    <div class="list">
+      <EntryForm>
+      </EntryForm>
+    </div>
   </WishCardContainer>,
 ];
 

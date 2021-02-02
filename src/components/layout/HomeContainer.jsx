@@ -1,6 +1,6 @@
 const m = require("mithril");
 import logo from "../../services/images/logo.png"
-import list from "../../services/images/list-screenshot.png"
+import list from "../../services/images/list-icon.png"
 import comingSoon from "../../services/images/comingSoon.jpeg"
 
 const HomeContainer = {
@@ -58,7 +58,7 @@ const HomeContainer = {
         <div class="home-container">
           <h3>View people on santas fancy map!</h3>
           <div class="headlines">
-            <a href="#!/add-child"><img src={comingSoon}></img></a>
+            <a href="#!/home"><img src={comingSoon}></img></a>
           </div>
         </div>
       </div>

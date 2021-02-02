@@ -3,6 +3,9 @@ import UIButton from "./ui/UIButton.jsx";
 import { frown, smile } from "../services/svg.jsx"
 import { setMockData } from "../store/data";
 
+import header from "../services/images/header.png"
+import seal from "../services/images/seal.png"
+
 
 const entryFormHandler = formDOM => {
   const formData = new FormData(formDOM);
@@ -44,7 +47,14 @@ const EntryForm = {
 
   view: (vnode) => (
 
+    // <div>
+    //   <div class="container" id="contain">
+
+    //   </div>
+
     <form name="entry-form" class="parchment" id="entry-form">
+      <p id="labarum"><img src={header} /></p>
+      <p class="inkTitle">The Naughty List</p>
       <label for="child-name">{`Childs Name`}</label>
       <input id="child-name" type="text" name="name" />
       <label for="location">{`Location (City, State)`}</label>
@@ -146,9 +156,11 @@ const EntryForm = {
         buttonName="Add to list"
       />
 
+      <p class="cachet"><img class="seal" src={seal} /></p>
+      <p> Santa Clause<br />123 Elf Road North Pole</p>
 
     </form >
-
+    // </div>
   ),
 };
 
