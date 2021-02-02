@@ -25,10 +25,7 @@ const entryFormHandler = formDOM => {
     }
   });
 
-  // newEntry["favorite"] = false;
-  // newEntry["CFPCompleted"] = newEntry.CFP ? false : "null";
-  // newEntry["naughty"] = EntryForm.data.state.naughty
-  // newEntry["nice"] = EntryForm.data.state.nice
+
   console.log(newEntry)
   setMockData(newEntry)
 
@@ -41,11 +38,13 @@ const EntryForm = {
   data: {
     nice: false,
     naughty: false,
+    submit: false
   },
 
 
   view: (vnode) => (
-    <form name="entry-form" id="entry-form">
+
+    <form name="entry-form" class="parchment" id="entry-form">
       <label for="child-name">{`Childs Name`}</label>
       <input id="child-name" type="text" name="name" />
       <label for="location">{`Location (City, State)`}</label>
@@ -135,11 +134,21 @@ const EntryForm = {
           </label>
       }
 
+      {/* <button
+        onclick={() => entryFormHandler(e)}
+      >
+        Add Person
+      </button> */}
+
       < UIButton
         action={() => entryFormHandler(vnode.dom)}
+
         buttonName="Add to list"
       />
+
+
     </form >
+
   ),
 };
 

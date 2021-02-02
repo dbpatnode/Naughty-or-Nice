@@ -44,7 +44,7 @@ const HomeContainer = {
           <div class="headlines">
             <h3>Add people to Santas list</h3>
           </div>
-          <a href="#!/add-child"><img src={list}></img></a>
+          <a href="#!/add-child"><img src="https://2019.igem.org/wiki/images/b/b9/Safety_safetyform.svg"></img></a>
         </div>
       </div>
 
