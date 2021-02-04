@@ -7,6 +7,8 @@ import header from "../services/images/header.png"
 import seal from "../services/images/seal.png"
 
 
+
+
 const entryFormHandler = formDOM => {
   const formData = new FormData(formDOM);
   const newEntry = {};
@@ -32,22 +34,38 @@ const entryFormHandler = formDOM => {
   console.log(newEntry)
   setMockData(newEntry)
 
-  entryForm.reset();
+  // entryForm.reset();
 };
 
+
+// const changeButtonName = () => {
+//   {
+//     vnode.state.clicked != true ?
+//       buttonName = "Add"
+//       :
+//       buttonName = "Person Added"
+//   }
+// }
 
 const EntryForm = {
   // below how you write state with Mithril (very similar to React)
   data: {
     nice: false,
     naughty: false,
-    submit: false
+    clicked: false
   },
 
+  // function changeButtonName(){
+  //   {vnode.state.clicked != true ?
+  //     buttonName = "Add"
+  //   :
+  //   buttonName = "Perons Added"}
+  // } 
 
   view: (vnode) => (
 
-    <form name="entry-form" class="parchment" id="entry-form">
+    <form name="entry-form"
+      id="entry-form">
       <p id="labarum"><img src={header} /></p>
       <p class="inkTitle">Add Someone To the List</p>
       <label for="child-name">{`Childs Name:  `}</label>
@@ -140,23 +158,57 @@ const EntryForm = {
           </label>
       }
 
-      {/* <button
-        onclick={() => entryFormHandler(e)}
+      <button
+        class="ui-button"
+        type="button"
+        data-toggle="modal"
+        data-target="#exampleModal"
+        onclick={() =>
+          entryFormHandler(vnode.dom)}
       >
-        Add Person
-      </button> */}
+        Add
+        </button>
 
-      < UIButton
-        action={() => entryFormHandler(vnode.dom)}
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Success!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="body">
+                <div class="head">
+                  <div class="ear"></div>
+                  <div class="ear"></div>
+                  <div class="hat"></div>
+                  <div class="eye"></div>
+                  <div class="eye"></div>
+                  <div class="nose"></div>
+                  <div class="mouth"></div>
+                </div>
+              </div>
+              Person Added!
+                    </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        buttonName="Add to list"
-      />
+
+
+
+
 
       <p class="cachet"><img class="seal" src={seal} /></p>
       <p> Santa Clause<br />123 Elf Road North Pole</p>
 
     </form >
-    // </div>
   ),
 };
 
