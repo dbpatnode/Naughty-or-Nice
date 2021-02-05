@@ -169,7 +169,6 @@ const EntryForm = {
               </button>
             </div>
             <div class="modal-body">
-              {/* <Santa /> */}
 
               <div class="present" ontouchstart="ontouchstart">
                 <div class="santa">
@@ -189,11 +188,10 @@ const EntryForm = {
                   <div class="present__bow"></div>
                 </div>
               </div>
-              Person Added!
+              Person added! Go Check Santas List.
                     </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>

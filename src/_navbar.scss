@@ -1,0 +1,72 @@
+///////////
+//NAV BAR//
+///////////
+
+// drop shadows for nav links 
+
+
+// .navbar {
+//    background-color:rgb(165, 12, 12);
+// }
+@media only screen and (max-width: 768px){
+    .navbar{
+    background-color: $primary;
+    // align-items: center;
+  }
+  }
+  
+  @media only screen and (min-width: 768px){
+      .navbar{
+      background-color: $primary;
+      height: 12%
+    }
+  }
+  
+  // @media only screen and (max-width: 768px) {
+  // .navbar {
+  //  background-color:rgb(165, 12, 12);
+   
+  //  height: 70px;
+  //   .bi  {
+  //   -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))!important;
+  //   filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))!important;
+  // }
+  // }
+  // }
+  .nav-item{
+    color:rgb(255, 255, 255) !important;
+    font-family: $main-text;
+    font-weight: bold;
+    // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    padding-right:45px;
+    padding-left:45px;
+    padding-top:7px;
+    text-shadow: 2px 2px #ff0000;
+  
+    &:hover {
+      color: rgb(243, 200, 200) !important;
+      text-shadow: none;
+    }
+  
+    .bi {
+      -webkit-filter: drop-shadow( 3px 3px 2px rgb(255, 0, 0))!important;
+        filter: drop-shadow( 3px 3px 2px #ff0000);
+    }
+       &:hover {
+          filter: drop-shadow(none)
+      }
+  }
+  
+  .navbar-brand{
+    font-family: caudex;
+    font-size: 1.7em;
+    color: white !important;
+  
+  }
+  
+  #logo{
+      width: 95%;
+      height: 95%;
+  }
+  
