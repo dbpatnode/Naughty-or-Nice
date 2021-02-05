@@ -50,6 +50,12 @@ form {
  }
 }
 
+#note-footer {
+  text-align: right;
+  margin-right: 15px;
+  font-size: 3em;
+}
+
 .ui-button{
   margin-left: 65%;
   margin-top: 20px;
@@ -481,10 +487,6 @@ html, body {
   scroll-behavior: smooth;
 }
 
-// body {
-//   font: var(--fontSize)/200% 'Bilbo Swash Caps', cursive;
-
-// }
 
 .list {
   display:flex;
@@ -500,11 +502,7 @@ html, body {
   font: var(--fontSize)/200% 'Bilbo Swash Caps', cursive;
 }
 
-// main {
-//   // postion: relative !important;
-//   width: 100%;
-//   height: auto;
-// }
+
 
 
 #parchment {
@@ -531,23 +529,6 @@ html, body {
   text-align: center;
 }
 
-// div p:not(:first-child)::first-letter {
-//   float: left;
-//   font: 30px Morris;
-//   text-shadow: 1px 1px 1px #000;
-//   margin: 0 .5rem;
-// }
-
-// #contain {
-//   position: relative;
-//  	display: flex;
-//   flex-direction: column;
-// 	width: 75%;
-//   height: auto;
-//   margin-top: 0vh;
-// 	padding: 25vh;
-// }
-
 .inkTitle {
   font-size: 3.5em;
 	font-family: Pirata One, sans-serif;
@@ -570,7 +551,7 @@ html, body {
 }
 
 .seal {
-  // left:75;
+
   margin-top: 4rem;
   width:100%;
   height: auto;
@@ -588,28 +569,52 @@ html, body {
   padding-left: 85%;
   margin-top:0;
 }
-// @media screen and (max-width: 1400px) {
-// .cachet {
-//   position: relative;
-//   padding-left: 85%;
-//   margin-top:0;
-// }
-// }
-// @media screen and (min-width: 768px) {
-//   .cachet {
-//     // position: relative;
-//     padding-left: 10%;
-//   }
-// }
 
-// @media screen and (min-width: 800px) {
-//   body {
-//     background-color: lavender;
-//   }
 :root {
   --costume-color: #f91047;
 }
 
+///////////
+// MODAL //
+///////////
+
+.modal-dialog {
+position:relative;
+}
+
+.modal-content {
+  // text-align: center;
+  // position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-2%);
+  width:45vw ;
+}
+
+
+
+.modal-title {
+
+  font-size:4em;
+  font-weight: bold;
+  // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.close {
+  size: 20px;
+  width: 3vw;
+  height: 3vw;
+  border: 1px solid rgb(207, 206, 206);
+  border-radius: 10px;
+  background-color: white;
+  color: $primary;
+
+  &:hover{
+    background-color: $primary;
+    color:white;
+  }
+}
 ///////////
 // SANTA //
 //////////
@@ -637,10 +642,10 @@ $colorSantaHat: darken($colorPresent, 10%);
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // height: 100vh;
 
 }
 

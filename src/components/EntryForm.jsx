@@ -55,8 +55,7 @@ const EntryForm = {
 
   view: (vnode) => (
 
-    <form name="entry-form"
-      id="entry-form">
+    <form name="entry-form" id="entry-form">
       <p id="labarum"><img src={header} /></p>
       <p class="inkTitle">Add Someone To the List</p>
       <label for="child-name">{`Childs Name:  `}</label>
@@ -206,7 +205,7 @@ const EntryForm = {
 
 
       <p class="cachet"><img class="seal" src={seal} /></p>
-      <p> Santa Clause<br />123 Elf Road North Pole</p>
+      <span id="note-footer"><p> Santa Clause<br />123 Elf Road North Pole</p></span>
 
     </form >
   ),
