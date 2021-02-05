@@ -1,7 +1,8 @@
 const m = require("mithril");
-import UIButton from "./ui/UIButton.jsx";
+
 import { frown, smile } from "../services/svg.jsx"
 import { setMockData } from "../store/data";
+
 
 import header from "../services/images/header.png"
 import seal from "../services/images/seal.png"
@@ -36,16 +37,6 @@ const entryFormHandler = formDOM => {
 
   // entryForm.reset();
 };
-
-
-// const changeButtonName = () => {
-//   {
-//     vnode.state.clicked != true ?
-//       buttonName = "Add"
-//       :
-//       buttonName = "Person Added"
-//   }
-// }
 
 const EntryForm = {
   // below how you write state with Mithril (very similar to React)
@@ -179,15 +170,24 @@ const EntryForm = {
               </button>
             </div>
             <div class="modal-body">
-              <div class="body">
-                <div class="head">
-                  <div class="ear"></div>
-                  <div class="ear"></div>
-                  <div class="hat"></div>
-                  <div class="eye"></div>
-                  <div class="eye"></div>
-                  <div class="nose"></div>
-                  <div class="mouth"></div>
+              {/* <Santa /> */}
+
+              <div class="present" ontouchstart="ontouchstart">
+                <div class="santa">
+                  <div class="santa__hat"></div>
+                  <div class="santa__eyes"></div>
+                  <div class="santa__beard">
+                    <div class="santa__beard--cover"></div>
+                  </div>
+                  <div class="santa__smile"></div>
+                </div>
+                <div class="present__box">
+                  <div class="present__ribbon--vertical"></div>
+                  <div class="present__ribbon--horizontal"></div>
+                </div>
+                <div class="present__top">
+                  <div class="present__ribbon--vertical"></div>
+                  <div class="present__bow"></div>
                 </div>
               </div>
               Person Added!
