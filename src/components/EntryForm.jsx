@@ -39,19 +39,12 @@ const entryFormHandler = formDOM => {
 };
 
 const EntryForm = {
-  // below how you write state with Mithril (very similar to React)
+  // wrting state
   data: {
     nice: false,
     naughty: false,
     clicked: false
   },
-
-  // function changeButtonName(){
-  //   {vnode.state.clicked != true ?
-  //     buttonName = "Add"
-  //   :
-  //   buttonName = "Perons Added"}
-  // } 
 
   view: (vnode) => (
 
@@ -196,11 +189,6 @@ const EntryForm = {
           </div>
         </div>
       </div>
-
-
-
-
-
 
       <p class="cachet"><img class="seal" src={seal} /></p>
       <span id="note-footer"><p> Santa Clause<br />123 Elf Road North Pole</p></span>

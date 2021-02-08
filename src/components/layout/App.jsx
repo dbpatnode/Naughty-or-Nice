@@ -6,7 +6,7 @@ import NavBar from "./NavBar.jsx";
 import HomeContainer from "./HomeContainer.jsx"
 
 // Components
-import PageBanner from "../../components/ui/PageBanner.jsx";
+
 import WishCardContainer from "../../components/layout/WishCardContainer.jsx";
 import EntireList from "../cards/EntireList.jsx";
 import NaughtyList from "../../components/cards/NaughtyList.jsx";
@@ -18,7 +18,7 @@ import { frown, smile } from "../../services/svg.jsx"
 // grabbing fake data
 import { getMockData } from "../../store/data";
 
-import header from "../../services/images/header.png"
+
 
 const SANTASLIST = getMockData();
 
@@ -35,10 +35,10 @@ const HomeView = () => [
 
 // we're returning arrays that contain these components(note the commas between components)
 
-const EntireListView = (santaslist) => [
+const EntireListView = (people) => [
   <WishCardContainer>
     <EntireList >
-      {santaslist.map((person) => (
+      {people.map((person) => (
         person.naughty == true ?
           <WishField name={person.name} location={person.location} emoji={frown} />
           :
@@ -51,14 +51,14 @@ const EntireListView = (santaslist) => [
 
 
 // we're returning arrays that contain these components(note the commas between components)
-const NiceListView = (santaslist) => [
+const NiceListView = (people) => [
   // <PageBanner
   //   action={() => console.log("logging out")}
   //   title="NICE LIST"
   // />,
   <WishCardContainer>
     <NiceList >
-      {santaslist.filter((person) => person.nice).map((person) => (
+      {people.filter((person) => person.nice).map((person) => (
         <WishField name={person.name} location={person.location} emoji={smile} />
       ))}
     </NiceList>
@@ -66,11 +66,11 @@ const NiceListView = (santaslist) => [
 ];
 
 // we're returning arrays that contain these components(note the commas between components)
-const NaughtyListView = (santaslist) => [
+const NaughtyListView = (people) => [
   // <PageBanner action={() => console.log("logging out")} title="NAUGHTY LIST" />,
   <WishCardContainer>
     <NaughtyList >
-      {santaslist.filter((person) => person.naughty).map((person) => (
+      {people.filter((person) => person.naughty).map((person) => (
         <WishField name={person.name} location={person.location} emoji={frown} />
       ))}
     </NaughtyList>
