@@ -16,11 +16,26 @@ import WishField from "../../components/cards/WishField.jsx"
 import { frown, smile } from "../../services/svg.jsx"
 
 // grabbing fake data
-import { getMockData } from "../../store/data";
+// import { setMockData } from "../../store/data";
 
 
+const Data = () => {
+  return m.request({
+    method: 'GET',
+    url: 'https://601dcacbbe5f340017a19f85.mockapi.io/AddedPerson'
+  }).then((people) => {
+    return people
+  })
+};
 
-const SANTASLIST = getMockData();
+let SANTASLIST = [];
+Data()
+  .then((people) => {
+    SANTASLIST = people;
+    m.redraw();
+  });
+
+
 
 // we're returning arrays that contain these components (note the commas between components)
 const HomeView = () => [
@@ -33,12 +48,13 @@ const HomeView = () => [
 
 ];
 
-// we're returning arrays that contain these components(note the commas between components)
-
 const EntireListView = (people) => [
+
   <WishCardContainer>
     <EntireList >
-      {people.map((person) => (
+      {console.log(people)}
+      {(people).map((person) => (
+        // {(getMockData || []).map((person) => (
         person.naughty == true ?
           <WishField name={person.name} location={person.location} emoji={frown} />
           :
@@ -49,7 +65,6 @@ const EntireListView = (people) => [
 
 ];
 
-
 // we're returning arrays that contain these components(note the commas between components)
 const NiceListView = (people) => [
   // <PageBanner
@@ -58,7 +73,8 @@ const NiceListView = (people) => [
   // />,
   <WishCardContainer>
     <NiceList >
-      {people.filter((person) => person.nice).map((person) => (
+      {(people).filter((person) => person.nice).map((person) => (
+        // {(people || []).filter((person) => person.nice).map((person) => (
         <WishField name={person.name} location={person.location} emoji={smile} />
       ))}
     </NiceList>
@@ -67,10 +83,11 @@ const NiceListView = (people) => [
 
 // we're returning arrays that contain these components(note the commas between components)
 const NaughtyListView = (people) => [
+
   // <PageBanner action={() => console.log("logging out")} title="NAUGHTY LIST" />,
   <WishCardContainer>
     <NaughtyList >
-      {people.filter((person) => person.naughty).map((person) => (
+      {(people || []).filter((person) => person.naughty).map((person) => (
         <WishField name={person.name} location={person.location} emoji={frown} />
       ))}
     </NaughtyList>
@@ -85,7 +102,8 @@ const FormView = () => [
   // />,
   <WishCardContainer>
     <div class="list">
-      <EntryForm>
+      <EntryForm
+      >
       </EntryForm>
     </div>
   </WishCardContainer>,
@@ -94,16 +112,22 @@ const FormView = () => [
 
 // using lifecycle methods to ensure navigation menu
 // always loads
+
+// oncreate lifecycle method hook is activated after DOM ele is created.
+// guaranteed to run @ end of render lifecycle, better for getting layout
+// values or elements.
+// lifecycle method hooks are at the same level as the view property.
+
 const App = {
-  // oncreate lifecycle method hook is activated after DOM ele is created.
-  // guaranteed to run @ end of render lifecycle, better for getting layout
-  // values or elements.
-  // lifecycle method hooks are at the same level as the view property.
-
-
+  data: {
+    people: Data
+  },
   oncreate: (vnode) => {
     // plain old javascript grabbing the main-page class and appending the nave routes to it
     const mainPage = vnode.dom.querySelector(".main-page");
+
+
+
 
     m.route(mainPage, "/home", {
       "/home": {

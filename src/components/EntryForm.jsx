@@ -1,7 +1,7 @@
 const m = require("mithril");
 
 import { frown, smile } from "../services/svg.jsx"
-import { setMockData } from "../store/data";
+// import { setMockData } from "../store/data";
 
 
 import header from "../services/images/header.png"
@@ -32,35 +32,90 @@ const entryFormHandler = formDOM => {
   });
 
 
-  console.log(newEntry)
-  setMockData(newEntry)
+  const setData = (newEntry) => {
+    return m.request({
+      method: 'POST',
+      url: 'https://601dcacbbe5f340017a19f85.mockapi.io/AddedPerson',
+    }).then((newEntry) => {
+      console.log(newEntry)
+      newEntry
+    })
+  };
+
+  let UPDATEDLIST = [];
+  setData(newEntry)
+    .then((newEntry) => {
+      UPDATEDLIST = newEntry;
+      m.redraw();
+    });
+
+
+
+
+  //   const setData = santaslist => SANTASLIST.push(newEntry){
+  //     m.request({
+  //       method: 'POST',
+  //       url: 'https://601dcacbbe5f340017a19f85.mockapi.io/AddedPerson'
+  //     }).then((newEntry) => {
+  //       console.log(newEntry)
+  //       // return newEntry
+
+  //     })
+  // };
+
+
+  console.log("new entry", newEntry)
+  setData(newEntry)
 
   // entryForm.reset();
 };
+
+const STATES = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
 
 const EntryForm = {
   // wrting state
   data: {
     nice: false,
     naughty: false,
-    clicked: false
+    clicked: false,
+    // name: "",
+    // street: "",
+    // state: "",
+    // city: "",
   },
+
 
   view: (vnode) => (
 
     <form name="entry-form" id="entry-form">
       <p id="labarum"><img src={header} /></p>
       <p class="inkTitle">Add Someone To the List</p>
-      <label for="child-name">{`Childs Name:  `}</label>
-      <input id="child-name" type="text" name="name" />
-      <label for="location">{`Location (City, State):`}</label>
+      <label for="child-name">{`Persons Name:  `}</label>
       <input
-        id="location"
+        id="child-name"
         type="text"
-        name="location"
-      />
+        name="name"
 
+      /><br />
+
+      <label for="street">{`Street: `}</label>
+      <input id="street" type="text" name="street" />
+
+      <label for="state">State:</label>
+      <select
+        name="state"
+        id="state"
+        value={vnode.state.state}
+      >
+        {STATES.map(state => {
+          return <option value={`${state}`}>{`${state}`}</option>
+        })}
+      </select>
+
+      <label for="city">{`City: `}</label>
+      <input id="city" type="text" name="city" />
       <br />
+
       <label for="naughty-or-nice">{`We're they Naughty or Nice? `}</label>
 
       {/* TERNARY FOR CHANGING CLASS NAME (STYLING) */}
@@ -147,7 +202,9 @@ const EntryForm = {
         data-toggle="modal"
         data-target="#exampleModal"
         onclick={() =>
-          entryFormHandler(vnode.dom)}
+          entryFormHandler(vnode.dom)
+          // setData(vnode.dom)
+        }
       >
         Add
         </button>
