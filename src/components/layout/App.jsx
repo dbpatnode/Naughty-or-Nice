@@ -22,7 +22,7 @@ import { frown, smile } from "../../services/svg.jsx"
 const Data = () => {
   return m.request({
     method: 'GET',
-    url: 'https://601dcacbbe5f340017a19f85.mockapi.io/AddedPerson'
+    url: 'http://localhost:5000/santaslist'
   }).then((people) => {
     return people
   })

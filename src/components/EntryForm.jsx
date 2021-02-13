@@ -10,8 +10,40 @@ import seal from "../services/images/seal.png"
 
 
 
-const entryFormHandler = formDOM => {
+// const entryFormHandler = formDOM => {
+//   const formData = new FormData(formDOM);
+//   const newEntry = {};
+
+//   Array.from(formData.entries()).map(entryValue => {
+//     const key = entryValue[0];
+//     const value = entryValue[1];
+
+//     switch (value) {
+//       case "false":
+//         newEntry[key] = false;
+//         break;
+//       case "true":
+//         newEntry[key] = true;
+//         break;
+//       default:
+//         newEntry[key] = value;
+//         break;
+//     }
+//   });
+
+//   console.log("new entry", newEntry)
+// };
+
+
+
+
+
+const setData = formDOM => {
+  // console.log(vnode.state)
+  // debugger
   const formData = new FormData(formDOM);
+
+  // console.log("formData", formData)
   const newEntry = {};
 
   Array.from(formData.entries()).map(entryValue => {
@@ -30,58 +62,42 @@ const entryFormHandler = formDOM => {
         break;
     }
   });
-
-
-  const setData = (newEntry) => {
-    return m.request({
-      method: 'POST',
-      url: 'https://601dcacbbe5f340017a19f85.mockapi.io/AddedPerson',
-    }).then((newEntry) => {
-      console.log(newEntry)
-      newEntry
-    })
-  };
-
-  let UPDATEDLIST = [];
-  setData(newEntry)
-    .then((newEntry) => {
-      UPDATEDLIST = newEntry;
-      m.redraw();
-    });
-
-
-
-
-  //   const setData = santaslist => SANTASLIST.push(newEntry){
-  //     m.request({
-  //       method: 'POST',
-  //       url: 'https://601dcacbbe5f340017a19f85.mockapi.io/AddedPerson'
-  //     }).then((newEntry) => {
-  //       console.log(newEntry)
-  //       // return newEntry
-
-  //     })
-  // };
-
-
+  // console.log("formData", formData)
   console.log("new entry", newEntry)
-  setData(newEntry)
 
-  // entryForm.reset();
-};
+  m.request({
+    method: 'POST',
+    // headers: {
+    //   'Content-Type': 'application/json',
+    //   Accept: 'application/json',
+    // },
+    url: 'http://localhost:5000/santaslist',
+    body: {
+      newEntry
+    }
+  }).then((person) => {
+
+    // debugger
+    console.log("updated entry", person)
+    // return newEntry
+  });
+}
+
+// setData(newEntry)
 
 const STATES = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
 
 const EntryForm = {
   // wrting state
   data: {
+    name: "",
+    street: "",
+    state: "",
+    city: "",
+    zipcode: "",
     nice: false,
     naughty: false,
     clicked: false,
-    // name: "",
-    // street: "",
-    // state: "",
-    // city: "",
   },
 
 
@@ -95,65 +111,104 @@ const EntryForm = {
         id="child-name"
         type="text"
         name="name"
+        value={vnode.state.name}
+        onchange={(e) => {
+          vnode.state.name = e.target.value
+          console.log("name", vnode.state.name)
+        }}
 
       /><br />
 
       <label for="street">{`Street: `}</label>
-      <input id="street" type="text" name="street" />
+      <input
+        id="street"
+        type="text"
+        name="street"
+        value={vnode.state.street}
+        onchange={(e) => {
+          vnode.state.street = e.target.value
+          console.log("street", vnode.state.street)
+        }}
+      />
+
+      <label for="city">{`City: `}</label>
+      <input id="city" type="text" name="city"
+        value={vnode.state.city}
+        onchange={(e) => {
+          vnode.state.city = e.target.value
+          console.log("city", vnode.state.city)
+        }}
+      />
+      <br />
 
       <label for="state">State:</label>
       <select
         name="state"
         id="state"
         value={vnode.state.state}
+        onchange={(e) => {
+          vnode.state.state = e.target.value
+          console.log("state", vnode.state.state)
+        }
+        }
       >
         {STATES.map(state => {
-          return <option value={`${state}`}>{`${state}`}</option>
+          return <option value={vnode.state.state}>
+            {`${state}`}
+          </option>
         })}
       </select>
 
-      <label for="city">{`City: `}</label>
-      <input id="city" type="text" name="city" />
+      <label for="zipcode">{`Zip Code: `}</label>
+      <input id="zipcode" type="text" name="zipcode"
+        value={vnode.state.zipcode}
+        onchange={(e) => {
+          vnode.state.zipcode = e.target.value
+          console.log("zipcode", vnode.state.zipcode)
+        }}
+      />
+
       <br />
 
       <label for="naughty-or-nice">{`We're they Naughty or Nice? `}</label>
 
       {/* TERNARY FOR CHANGING CLASS NAME (STYLING) */}
-      {vnode.state.naughty == true ?
-        <label for="naughty" class="naughty-true" >
-          {frown}
-          <input
-            type="checkbox"
-            hidden
-            name="naughty"
-            id="naughty"
-            value={vnode.state.naughty}
-            onclick={() => {
-              // on click change to opposite of whatever state was before)
-              vnode.state.naughty = !vnode.state.naughty;
-              console.log("naughty", vnode.state.naughty);
-            }}
-          />
-        </label>
+      {
+        vnode.state.naughty == true ?
+          <label for="naughty" class="naughty-true" >
+            {frown}
+            <input
+              type="checkbox"
+              hidden
+              name="naughty"
+              id="naughty"
+              value={vnode.state.naughty}
+              onclick={() => {
+                // on click change to opposite of whatever state was before)
+                vnode.state.naughty = !vnode.state.naughty;
+                console.log("naughty", vnode.state.naughty);
+              }}
+            />
+          </label>
 
-        :
-        <label for="naughty" class="naughty-false">
-          {frown}
-          <input
-            type="checkbox"
-            hidden
-            name="naughty"
-            id="naughty"
-            value={vnode.state.naughty}
-            onclick={() => {
-              // on click change to opposite of whatever state was before)
-              vnode.state.naughty = !vnode.state.naughty;
-              console.log("naughty", vnode.state.naughty);
-            }}
-          />
-        </label>
+          :
+          <label for="naughty" class="naughty-false">
+            {frown}
+            <input
+              type="checkbox"
+              hidden
+              name="naughty"
+              id="naughty"
+              value={vnode.state.naughty}
+              onclick={() => {
+                // on click change to opposite of whatever state was before)
+                vnode.state.naughty = !vnode.state.naughty;
+                console.log("naughty", vnode.state.naughty);
+              }}
+            />
+          </label>
       }
-      {`:`}
+      { `:`}
       {
         vnode.state.nice == true ?
           <label
@@ -201,9 +256,12 @@ const EntryForm = {
         type="button"
         data-toggle="modal"
         data-target="#exampleModal"
-        onclick={() =>
-          entryFormHandler(vnode.dom)
-          // setData(vnode.dom)
+        onclick={(e) =>
+        // entryFormHandler(vnode.dom)
+        {
+          // e.preventDefault(),
+          setData(vnode.dom)
+        }
         }
       >
         Add
