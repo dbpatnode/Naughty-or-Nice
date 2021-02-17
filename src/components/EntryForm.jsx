@@ -9,23 +9,11 @@ import seal from "../services/images/seal.png"
 
 
 
-const setData = formDOM => {
-
-  // console.log("new entry", newEntry)
-
-  // let newEntry = {};
-
-  // (formData.entries()).forEach(entry => {
-  //   const [key, value] = entry
-
-  //   newEntry[key] = value === "true" ? true : false
-  // })
-
+const setData = (formDOM) => {
   const formData = new FormData(formDOM);
-  // console.log("formData", formData)
   const newEntry = {};
 
-  Array.from(formData.entries()).map(entryValue => {
+  Array.from(formData.entries()).forEach(entryValue => {
     const key = entryValue[0];
     const value = entryValue[1];
 
@@ -42,24 +30,25 @@ const setData = formDOM => {
     }
   });
 
+  console.log("new entry", newEntry)
+
   m.request({
     method: 'POST',
     url: 'http://localhost:5000/santaslist',
-    body: {
-      newEntry
-    }
+    // body: newEntry,
+    data: newEntry
   }).then((person) => {
+
+    // addPersonToList(person)
     console.log("updated entry", person)
   });
 }
 
-// setData(newEntry)
+
 
 const STATES = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
 
 const EntryForm = {
-
-
   // wrting state
   data: {
     name: "",
@@ -234,6 +223,9 @@ const EntryForm = {
         {
           // e.preventDefault(),
           setData(vnode.dom)
+          // , addPersonToList
+          // )
+
         }
         }
       >

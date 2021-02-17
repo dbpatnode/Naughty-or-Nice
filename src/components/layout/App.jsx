@@ -38,6 +38,10 @@ Data()
     m.redraw();
   });
 
+// const addPersonToList = (person) => {
+//   SANTASLIST.push(person)
+// }
+
 
 
 // we're returning arrays that contain these components (note the commas between components)
@@ -107,6 +111,7 @@ const FormView = () => [
   <WishCardContainer>
     <div class="list">
       <EntryForm
+      // addPersonToList={addPersonToList} 
       >
       </EntryForm>
     </div>
@@ -153,7 +158,7 @@ const App = {
         view: () => EntireListView(SANTASLIST),
       },
       "/add-child": {
-        view: () => FormView(),
+        view: () => FormView(SANTASLIST),
       },
       "/nice-list": {
         view: () => NiceListView(SANTASLIST),
