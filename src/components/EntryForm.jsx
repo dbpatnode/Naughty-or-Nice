@@ -9,40 +9,19 @@ import seal from "../services/images/seal.png"
 
 
 
-
-// const entryFormHandler = formDOM => {
-//   const formData = new FormData(formDOM);
-//   const newEntry = {};
-
-//   Array.from(formData.entries()).map(entryValue => {
-//     const key = entryValue[0];
-//     const value = entryValue[1];
-
-//     switch (value) {
-//       case "false":
-//         newEntry[key] = false;
-//         break;
-//       case "true":
-//         newEntry[key] = true;
-//         break;
-//       default:
-//         newEntry[key] = value;
-//         break;
-//     }
-//   });
-
-//   console.log("new entry", newEntry)
-// };
-
-
-
-
-
 const setData = formDOM => {
-  // console.log(vnode.state)
-  // debugger
-  const formData = new FormData(formDOM);
 
+  // console.log("new entry", newEntry)
+
+  // let newEntry = {};
+
+  // (formData.entries()).forEach(entry => {
+  //   const [key, value] = entry
+
+  //   newEntry[key] = value === "true" ? true : false
+  // })
+
+  const formData = new FormData(formDOM);
   // console.log("formData", formData)
   const newEntry = {};
 
@@ -62,24 +41,15 @@ const setData = formDOM => {
         break;
     }
   });
-  // console.log("formData", formData)
-  console.log("new entry", newEntry)
 
   m.request({
     method: 'POST',
-    // headers: {
-    //   'Content-Type': 'application/json',
-    //   Accept: 'application/json',
-    // },
     url: 'http://localhost:5000/santaslist',
     body: {
       newEntry
     }
   }).then((person) => {
-
-    // debugger
     console.log("updated entry", person)
-    // return newEntry
   });
 }
 
@@ -88,6 +58,8 @@ const setData = formDOM => {
 const STATES = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
 
 const EntryForm = {
+
+
   // wrting state
   data: {
     name: "",
@@ -100,6 +72,7 @@ const EntryForm = {
     clicked: false,
   },
 
+  // const { name, street, state, city, zipcode, nice, naughty } = data,
 
   view: (vnode) => (
 
@@ -256,7 +229,7 @@ const EntryForm = {
         type="button"
         data-toggle="modal"
         data-target="#exampleModal"
-        onclick={(e) =>
+        onclick={() =>
         // entryFormHandler(vnode.dom)
         {
           // e.preventDefault(),

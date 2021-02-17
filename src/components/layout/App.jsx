@@ -13,7 +13,10 @@ import NaughtyList from "../../components/cards/NaughtyList.jsx";
 import NiceList from "../../components/cards/NiceList.jsx";
 import EntryForm from "../../components/EntryForm.jsx";
 import WishField from "../../components/cards/WishField.jsx"
+import MapContainer from "../../components/layout/MapContainer.jsx";
+import Map from "../../components/cards/Map.jsx"
 import { frown, smile } from "../../services/svg.jsx"
+
 
 // grabbing fake data
 // import { setMockData } from "../../store/data";
@@ -47,6 +50,7 @@ const HomeView = () => [
   <HomeContainer />
 
 ];
+
 
 const EntireListView = (people) => [
 
@@ -118,10 +122,22 @@ const FormView = () => [
 // values or elements.
 // lifecycle method hooks are at the same level as the view property.
 
+const MapView = () => [
+
+  // <PageBanner
+  //   action={() => console.log(`Logging out!`)}
+  //   title="NAUGHTY OR NICE "
+  // />
+  <MapContainer>
+    <Map />
+  </MapContainer>
+
+];
+
 const App = {
-  data: {
-    people: Data
-  },
+  // data: {
+  //   people: Data
+  // },
   oncreate: (vnode) => {
     // plain old javascript grabbing the main-page class and appending the nave routes to it
     const mainPage = vnode.dom.querySelector(".main-page");
@@ -144,6 +160,9 @@ const App = {
       },
       "/naughty-list": {
         view: () => NaughtyListView(SANTASLIST),
+      },
+      "/map": {
+        view: () => MapView(SANTASLIST),
       },
     });
   },
