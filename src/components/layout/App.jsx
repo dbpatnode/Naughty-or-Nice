@@ -56,12 +56,13 @@ const EntireListView = (people) => [
 
   <WishCardContainer>
     <EntireList >
-      {console.log(people)}
+      {/* {console.log(people)} */}
       {(people).map((person) => (
+        // console.log(person)
         person.naughty == true ?
-          <WishField name={person.name} location={person.location} emoji={frown} />
+          <WishField name={person.name} city={person.city} state={person.state} emoji={frown} />
           :
-          <WishField name={person.name} location={person.location} emoji={smile} />
+          <WishField name={person.name} city={person.city} state={person.state} emoji={smile} />
       ))}
     </EntireList>
   </WishCardContainer>
@@ -73,7 +74,7 @@ const NiceListView = (people) => [
   <WishCardContainer>
     <NiceList >
       {(people).filter((person) => person.nice).map((person) => (
-        <WishField name={person.name} location={person.location} emoji={smile} />
+        <WishField name={person.name} city={person.city} state={person.state} emoji={smile} />
       ))}
     </NiceList>
   </WishCardContainer>
@@ -84,7 +85,7 @@ const NaughtyListView = (people) => [
   <WishCardContainer>
     <NaughtyList >
       {(people || []).filter((person) => person.naughty).map((person) => (
-        <WishField name={person.name} location={person.location} emoji={frown} />
+        <WishField name={person.name} city={person.city} state={person.state} emoji={frown} />
       ))}
     </NaughtyList>
   </WishCardContainer>
