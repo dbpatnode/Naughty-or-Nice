@@ -1,8 +1,6 @@
 const m = require("mithril");
 
 import { frown, smile } from "../services/svg.jsx"
-// import { setMockData } from "../store/data";
-
 
 import header from "../services/images/header.png"
 import seal from "../services/images/seal.png"
@@ -73,7 +71,7 @@ const EntryForm = {
   // const { name, street, state, city, zipcode, nice, naughty } = data,
 
   view: (vnode) => (
-
+   
     <form name="entry-form" id="entry-form">
       <p id="labarum"><img src={header} /></p>
       <p class="inkTitle">Add Someone To the List</p>
@@ -284,6 +282,7 @@ const EntryForm = {
       <span id="note-footer"><p> Santa Clause<br />123 Elf Road North Pole</p></span> */}
 
     </form >
+    
   ),
 };
 

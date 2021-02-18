@@ -6,7 +6,6 @@ import NavBar from "./NavBar.jsx";
 import HomeContainer from "./HomeContainer.jsx"
 
 // Components
-
 import WishCardContainer from "../../components/layout/WishCardContainer.jsx";
 import EntireList from "../cards/EntireList.jsx";
 import NaughtyList from "../../components/cards/NaughtyList.jsx";
@@ -16,11 +15,6 @@ import WishField from "../../components/cards/WishField.jsx"
 import MapContainer from "../../components/layout/MapContainer.jsx";
 import Map from "../../components/cards/Map.jsx"
 import { frown, smile } from "../../services/svg.jsx"
-
-
-// grabbing fake data
-// import { setMockData } from "../../store/data";
-
 
 const Data = () => {
   return m.request({
@@ -42,18 +36,12 @@ const addPersonToList = (person) => {
   SANTASLIST.push(person)
 }
 
-
-
 // we're returning arrays that contain these components (note the commas between components)
 const HomeView = () => [
-
   <HomeContainer />
-
 ];
 
-
 const EntireListView = (people) => [
-
   <WishCardContainer>
     <EntireList >
       {/* {console.log(people)} */}
@@ -66,7 +54,6 @@ const EntireListView = (people) => [
       ))}
     </EntireList>
   </WishCardContainer>
-
 ];
 
 // we're returning arrays that contain these components(note the commas between components)
@@ -84,7 +71,7 @@ const NiceListView = (people) => [
 const NaughtyListView = (people) => [
   <WishCardContainer>
     <NaughtyList >
-      {(people || []).filter((person) => person.naughty).map((person) => (
+      {(people).filter((person) => person.naughty).map((person) => (
         <WishField name={person.name} city={person.city} state={person.state} emoji={frown} />
       ))}
     </NaughtyList>
@@ -92,22 +79,13 @@ const NaughtyListView = (people) => [
 ];
 
 // we're returning arrays that contain these components(note the commas between components)
-const FormView = () => [
+const FormView = (SANTASLIST) => [
+ 
   <WishCardContainer>
-    <div class="list">
+    {console.log("santaslist", SANTASLIST)}
       <EntryForm santaslist={SANTASLIST} />
-    </div>
   </WishCardContainer>,
 ];
-
-
-// using lifecycle methods to ensure navigation menu
-// always loads
-
-// oncreate lifecycle method hook is activated after DOM ele is created.
-// guaranteed to run @ end of render lifecycle, better for getting layout
-// values or elements.
-// lifecycle method hooks are at the same level as the view property.
 
 const MapView = () => [
   <MapContainer>
@@ -117,6 +95,13 @@ const MapView = () => [
 ];
 
 const App = {
+// using lifecycle methods to ensure navigation menu
+// always loads
+
+// oncreate lifecycle method hook is activated after DOM ele is created.
+// guaranteed to run @ end of render lifecycle, better for getting layout
+// values or elements.
+// lifecycle method hooks are at the same level as the view property.
   oncreate: (vnode) => {
 
     // plain old javascript grabbing the main-page class and appending the nave routes to it
