@@ -38,19 +38,15 @@ Data()
     m.redraw();
   });
 
-// const addPersonToList = (person) => {
-//   SANTASLIST.push(person)
-// }
+const addPersonToList = (person) => {
+  SANTASLIST.push(person)
+}
 
 
 
 // we're returning arrays that contain these components (note the commas between components)
 const HomeView = () => [
 
-  // <PageBanner
-  //   action={() => console.log(`Logging out!`)}
-  //   title="NAUGHTY OR NICE "
-  // />
   <HomeContainer />
 
 ];
@@ -62,7 +58,6 @@ const EntireListView = (people) => [
     <EntireList >
       {console.log(people)}
       {(people).map((person) => (
-        // {(getMockData || []).map((person) => (
         person.naughty == true ?
           <WishField name={person.name} location={person.location} emoji={frown} />
           :
@@ -75,14 +70,9 @@ const EntireListView = (people) => [
 
 // we're returning arrays that contain these components(note the commas between components)
 const NiceListView = (people) => [
-  // <PageBanner
-  //   action={() => console.log("logging out")}
-  //   title="NICE LIST"
-  // />,
   <WishCardContainer>
     <NiceList >
       {(people).filter((person) => person.nice).map((person) => (
-        // {(people || []).filter((person) => person.nice).map((person) => (
         <WishField name={person.name} location={person.location} emoji={smile} />
       ))}
     </NiceList>
@@ -91,8 +81,6 @@ const NiceListView = (people) => [
 
 // we're returning arrays that contain these components(note the commas between components)
 const NaughtyListView = (people) => [
-
-  // <PageBanner action={() => console.log("logging out")} title="NAUGHTY LIST" />,
   <WishCardContainer>
     <NaughtyList >
       {(people || []).filter((person) => person.naughty).map((person) => (
@@ -104,16 +92,9 @@ const NaughtyListView = (people) => [
 
 // we're returning arrays that contain these components(note the commas between components)
 const FormView = () => [
-  // <PageBanner
-  //   action={() => console.log(`Logging out!`)}
-  //   title="ADD SOMEONE ELSE TO THE LIST"
-  // />,
   <WishCardContainer>
     <div class="list">
-      <EntryForm
-      // addPersonToList={addPersonToList} 
-      >
-      </EntryForm>
+      <EntryForm santaslist={SANTASLIST} />
     </div>
   </WishCardContainer>,
 ];
@@ -128,11 +109,6 @@ const FormView = () => [
 // lifecycle method hooks are at the same level as the view property.
 
 const MapView = () => [
-
-  // <PageBanner
-  //   action={() => console.log(`Logging out!`)}
-  //   title="NAUGHTY OR NICE "
-  // />
   <MapContainer>
     <Map />
   </MapContainer>
@@ -140,15 +116,10 @@ const MapView = () => [
 ];
 
 const App = {
-  // data: {
-  //   people: Data
-  // },
   oncreate: (vnode) => {
+
     // plain old javascript grabbing the main-page class and appending the nave routes to it
     const mainPage = vnode.dom.querySelector(".main-page");
-
-
-
 
     m.route(mainPage, "/home", {
       "/home": {

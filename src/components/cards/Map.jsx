@@ -2,7 +2,11 @@ const m = require("mithril");
 
 const Map = {
     view: (vnode) => (
-        <div>Welcome to the map</div>
+        <div class="coming-soon">
+            <div>
+            <p> MAP COMING SOON</p> 
+            </div>
+        </div>
     )
 }
 

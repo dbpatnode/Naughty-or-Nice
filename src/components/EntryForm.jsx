@@ -9,7 +9,7 @@ import seal from "../services/images/seal.png"
 
 
 
-const setData = (formDOM) => {
+const setData = (formDOM, santaslist) => {
   const formData = new FormData(formDOM);
   const newEntry = {};
 
@@ -30,7 +30,7 @@ const setData = (formDOM) => {
     }
   });
 
-  console.log("new entry", newEntry)
+  // console.log("new entry", newEntry)
 
   m.request({
     method: 'POST',
@@ -38,9 +38,18 @@ const setData = (formDOM) => {
     // body: newEntry,
     data: newEntry
   }).then((person) => {
+    // console.log("addPersonFROMpost", santaslist(person))
+    console.log(santaslist.push(person))
+    santaslist.push(person)
+    m.redraw()
+    // let newSantasList = [...santaslist, person]
+    // return newSantasList
+    // window.location.href = "#!/santas-list"
+    // redirect
 
-    // addPersonToList(person)
-    console.log("updated entry", person)
+    // santaslist(person)
+    // santaslist(person)
+    // console.log("updated entry", person)
   });
 }
 
@@ -222,8 +231,9 @@ const EntryForm = {
         // entryFormHandler(vnode.dom)
         {
           // e.preventDefault(),
-          setData(vnode.dom)
-          // , addPersonToList
+          setData(vnode.dom, vnode.attrs.santaslist)
+          // console.log("add person", vnode.attrs.santaslist)
+          // , santaslist
           // )
 
         }
@@ -232,8 +242,8 @@ const EntryForm = {
         Add
         </button>
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+      {/* <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> */}
+      {/* <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Success!</h5>
@@ -271,7 +281,7 @@ const EntryForm = {
       </div>
 
       <p class="cachet"><img class="seal" src={seal} /></p>
-      <span id="note-footer"><p> Santa Clause<br />123 Elf Road North Pole</p></span>
+      <span id="note-footer"><p> Santa Clause<br />123 Elf Road North Pole</p></span> */}
 
     </form >
   ),
