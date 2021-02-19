@@ -2,10 +2,10 @@ const m = require("mithril");
 
 const Map = {
     view: (vnode) => (
-        <div class="coming-soon">
-            <div>
-            <p> MAP COMING SOON</p> 
-            </div>
+        <div>
+        <div id='map'></div>
+            // <div class='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
+        <div class='map-overlay' id='legend'></div>
         </div>
     )
 }

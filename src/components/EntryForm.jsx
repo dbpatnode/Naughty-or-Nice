@@ -4,6 +4,7 @@ import { frown, smile } from "../services/svg.jsx"
 
 import header from "../services/images/header.png"
 import seal from "../services/images/seal.png"
+import Modal from "../components/cards/Modal.jsx"
 
 
 
@@ -28,7 +29,6 @@ const setData = (formDOM, santaslist) => {
     }
   });
 
-  // console.log("new entry", newEntry)
 
   m.request({
     method: 'POST',
@@ -36,27 +36,16 @@ const setData = (formDOM, santaslist) => {
     // body: newEntry,
     data: newEntry
   }).then((person) => {
-    // console.log("addPersonFROMpost", santaslist(person))
-    console.log(santaslist.push(person))
-    santaslist.push(person)
-    m.redraw()
-    // let newSantasList = [...santaslist, person]
-    // return newSantasList
-    // window.location.href = "#!/santas-list"
-    // redirect
 
-    // santaslist(person)
-    // santaslist(person)
-    // console.log("updated entry", person)
   });
 }
 
 
 
-const STATES = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
+const STATES = ["", "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
 
 const EntryForm = {
-  // wrting state
+
   data: {
     name: "",
     street: "",
@@ -68,13 +57,97 @@ const EntryForm = {
     clicked: false,
   },
 
-  // const { name, street, state, city, zipcode, nice, naughty } = data,
-
   view: (vnode) => (
    
     <form name="entry-form" id="entry-form">
       <p id="labarum"><img src={header} /></p>
       <p class="inkTitle">Add Someone To the List</p>
+
+      <label for="naughty-or-nice">{`We're they Naughty or Nice? `}</label>
+
+      {/* TERNARY FOR CHANGING CLASS NAME (STYLING) */}
+      {
+        vnode.state.naughty == true ?
+          <label for="naughty" class="naughty-true" >
+            {frown}
+            <input
+              type="checkbox"
+              hidden
+              name="naughty"
+              id="naughty"
+              value={vnode.state.naughty}
+              onclick={(e) => {
+                // on click change to opposite of whatever state was before)
+                vnode.state.naughty = !vnode.state.naughty;
+                // e.preventDefault();
+                // console.log("naughty", vnode.state.naughty);
+              }}
+            />
+          </label>
+
+          :
+          <label for="naughty" class="naughty-false">
+            {frown}
+            <input
+              type="checkbox"
+              hidden
+              name="naughty"
+              id="naughty"
+              value={vnode.state.naughty}
+              onclick={(e) => {
+                // on click change to opposite of whatever state was before)
+                vnode.state.naughty = !vnode.state.naughty;
+                // e.preventDefault();
+                // console.log("naughty", vnode.state.naughty);
+              }}
+            />
+          </label>
+      }
+      { `:`}
+      {
+        vnode.state.nice == true ?
+          <label
+            for="nice"
+            class="nice-true"
+          >
+
+            {smile}
+            <input
+              type="checkbox"
+              hidden
+              id="nice"
+              name="nice"
+              value={vnode.state.nice}
+              onclick={(e) => {
+                // on click change to opposite of whatever state was before)
+                vnode.state.nice = !vnode.state.nice;
+                // e.preventDefault();
+                // console.log("nice", vnode.state.nice);
+              }}
+            />
+          </label>
+          :
+          <label
+            for="nice"
+            class="nice-false"
+          >
+            {smile}
+            <input
+              type="checkbox"
+              hidden
+              id="nice"
+              name="nice"
+              value={vnode.state.nice}
+              onclick={(e) => {
+
+                vnode.state.nice = !vnode.state.nice;
+                // e.preventDefault();
+                // console.log("nice", vnode.state.nice);
+              }}
+            />
+          </label>
+      }
+      <br/>
       <label for="child-name">{`Persons Name:  `}</label>
       <input
         id="child-name"
@@ -83,7 +156,7 @@ const EntryForm = {
         value={vnode.state.name}
         onchange={(e) => {
           vnode.state.name = e.target.value
-          console.log("name", vnode.state.name)
+          // console.log("name", vnode.state.name)
         }}
 
       /><br />
@@ -108,13 +181,14 @@ const EntryForm = {
           console.log("city", vnode.state.city)
         }}
       />
+      
       <br />
 
       <label for="state">State:</label>
-      <select
+      {/* <select
         name="state"
         id="state"
-        value={vnode.state.state}
+        // value={vnode.state.state}
         onchange={(e) => {
           vnode.state.state = e.target.value
           console.log("state", vnode.state.state)
@@ -122,11 +196,19 @@ const EntryForm = {
         }
       >
         {STATES.map(state => {
-          return <option value={vnode.state.state}>
+        return <option value={vnode.state.state}>
             {`${state}`}
           </option>
         })}
-      </select>
+      </select> */}
+
+      <input id="city" type="text" name="city"
+        value={vnode.state.state}
+        onchange={(e) => {
+          vnode.state.state = e.target.value
+          console.log("city", vnode.state.city)
+        }}
+      />
 
       <label for="zipcode">{`Zip Code: `}</label>
       <input id="zipcode" type="text" name="zipcode"
@@ -139,86 +221,7 @@ const EntryForm = {
 
       <br />
 
-      <label for="naughty-or-nice">{`We're they Naughty or Nice? `}</label>
-
-      {/* TERNARY FOR CHANGING CLASS NAME (STYLING) */}
-      {
-        vnode.state.naughty == true ?
-          <label for="naughty" class="naughty-true" >
-            {frown}
-            <input
-              type="checkbox"
-              hidden
-              name="naughty"
-              id="naughty"
-              value={vnode.state.naughty}
-              onclick={() => {
-                // on click change to opposite of whatever state was before)
-                vnode.state.naughty = !vnode.state.naughty;
-                console.log("naughty", vnode.state.naughty);
-              }}
-            />
-          </label>
-
-          :
-          <label for="naughty" class="naughty-false">
-            {frown}
-            <input
-              type="checkbox"
-              hidden
-              name="naughty"
-              id="naughty"
-              value={vnode.state.naughty}
-              onclick={() => {
-                // on click change to opposite of whatever state was before)
-                vnode.state.naughty = !vnode.state.naughty;
-                console.log("naughty", vnode.state.naughty);
-              }}
-            />
-          </label>
-      }
-      { `:`}
-      {
-        vnode.state.nice == true ?
-          <label
-            for="nice"
-            class="nice-true"
-          >
-
-            {smile}
-            <input
-              type="checkbox"
-              hidden
-              id="nice"
-              name="nice"
-              value={vnode.state.nice}
-              onclick={() => {
-                // on click change to opposite of whatever state was before)
-                vnode.state.nice = !vnode.state.nice;
-                console.log("nice", vnode.state.nice);
-              }}
-            />
-          </label>
-          :
-          <label
-            for="nice"
-            class="nice-false"
-          >
-            {smile}
-            <input
-              type="checkbox"
-              hidden
-              id="nice"
-              name="nice"
-              value={vnode.state.nice}
-              onclick={() => {
-                // on click change to opposite of whatever state was before)
-                vnode.state.nice = !vnode.state.nice;
-                console.log("nice", vnode.state.nice);
-              }}
-            />
-          </label>
-      }
+      
 
       <button
         class="ui-button"
@@ -240,8 +243,10 @@ const EntryForm = {
         Add
         </button>
 
-      {/* <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> */}
-      {/* <div class="modal-dialog" role="document">
+        <Modal/>
+{/* 
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Success!</h5>
@@ -268,8 +273,8 @@ const EntryForm = {
                   <div class="present__ribbon--vertical"></div>
                   <div class="present__bow"></div>
                 </div>
-              </div>
-              Person added! Go Check Santas List.
+              </div> 
+              <p>Person added! Go Check Santas List.</p>
                     </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -277,9 +282,10 @@ const EntryForm = {
           </div>
         </div>
       </div>
+      */}
 
       <p class="cachet"><img class="seal" src={seal} /></p>
-      <span id="note-footer"><p> Santa Clause<br />123 Elf Road North Pole</p></span> */}
+      <span id="note-footer"><p> Santa Clause<br />123 Elf Road North Pole</p></span>
 
     </form >
     

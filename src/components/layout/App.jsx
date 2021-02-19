@@ -19,6 +19,8 @@ import ComingSoon from "../../components/cards/ComingSoon.jsx"
 //SVGs
 import { frown, smile } from "../../services/svg.jsx"
 
+let SANTASLIST = [];
+
 const Data = () => {
   return m.request({
     method: 'GET',
@@ -27,8 +29,6 @@ const Data = () => {
     return people
   })
 };
-
-let SANTASLIST = [];
 Data()
   .then((people) => {
     SANTASLIST = people;
@@ -36,8 +36,10 @@ Data()
   });
 
 const addPersonToList = (person) => {
-  SANTASLIST.push(person)
+  SANTASLIST = SANTASLIST.push(person)
 }
+
+
 
 // we're returning arrays that contain these components (note the commas between components)
 const HomeView = () => [
@@ -47,9 +49,8 @@ const HomeView = () => [
 const EntireListView = (people) => [
   <WishCardContainer>
     <EntireList >
-      {/* {console.log(people)} */}
+
       {(people).map((person) => (
-        // console.log(person)
         person.naughty == true ?
           <WishField name={person.name} city={person.city} state={person.state} emoji={frown} />
           :
