@@ -71,7 +71,7 @@ const NiceListView = (people) => [
 const NaughtyListView = (people) => [
   <WishCardContainer>
     <NaughtyList >
-      {(people).filter((person) => person.naughty).map((person) => (
+      {(people || []).filter((person) => person.naughty).map((person) => (
         <WishField name={person.name} city={person.city} state={person.state} emoji={frown} />
       ))}
     </NaughtyList>
@@ -82,7 +82,6 @@ const NaughtyListView = (people) => [
 const FormView = (SANTASLIST) => [
  
   <WishCardContainer>
-    {console.log("santaslist", SANTASLIST)}
       <EntryForm santaslist={SANTASLIST} />
   </WishCardContainer>,
 ];

@@ -2,10 +2,7 @@ const m = require("mithril");
 
 const WishCardContainer = {
   view: ({ children }) => {
-    return 
-    <div class="list">
-      {children}
-    </div>;
+    return <div class="list">{children}</div>;
   },
 };
 
