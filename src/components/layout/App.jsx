@@ -14,6 +14,9 @@ import EntryForm from "../../components/EntryForm.jsx";
 import WishField from "../../components/cards/WishField.jsx"
 import MapContainer from "../../components/layout/MapContainer.jsx";
 import Map from "../../components/cards/Map.jsx"
+import ComingSoon from "../../components/cards/ComingSoon.jsx"
+
+//SVGs
 import { frown, smile } from "../../services/svg.jsx"
 
 const Data = () => {
@@ -88,7 +91,7 @@ const FormView = (SANTASLIST) => [
 
 const MapView = () => [
   <MapContainer>
-    <Map />
+    <ComingSoon />
   </MapContainer>
 
 ];
